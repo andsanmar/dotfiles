@@ -1,0 +1,36 @@
+* Dotfiles
+
+** My setup:
+
+*** WM: *i3*
+
+*** Bar: *polybar*
+
+*** Editor: *emacs*
+
+*** Terminal: *urxvt*
+
+
+** Color theme
+
+Tomorrow Night theme:
+
+*** Palette:
+
+#+NAME:   fig:SED-HR4049
+[[./pic/Tomorrow-Night-Palette.png]]
+
+| #1d1f21 | Background   |
+| #282a2e | Current Line |
+| #373b41 | Selection    |
+| #c5c8c6 | Foreground   |
+| #969896 | Comment      |
+| #cc6666 | Red          |
+| #de935f | Orange       |
+| #f0c674 | Yellow       |
+| #b5bd68 | Green        |
+| #8abeb7 | Aqua         |
+| #81a2be | Blue         |
+| #b294bb | Purple       |
+
+This schema is from: [[https://github.com/chriskempson/tomorrow-theme]]

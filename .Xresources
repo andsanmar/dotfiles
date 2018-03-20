@@ -1,0 +1,105 @@
+!==========
+! Urxvt
+!==========
+
+! mark-yank-urls bindings (see http://www.jukie.net/~bart/blog/urxvt-url-yank)
+!==========
+! Alt-u: Enter yank mode
+! Esc: Exit yank mode
+! y: copy to clipboard
+! Enter: Launch Browser
+! Ctrl-n: select next url
+! Ctrl-p: select previous url
+!==========
+
+URxvt.perl-lib:         /home/cofi/.urxvt/
+URxvt.perl-ext:         option-popup,matcher,selection,mark-yank-urls
+URxvt.urlLauncher:      /usr/bin/firefox
+URxvt.underlineURLs:    true
+URxvt.keysym.M-u:       perl:mark-yank-urls:activate_mark_mode
+
+URxvt.cutchars:         `"()'*<>[]{|}"
+ 
+URxvt.geometry:         100x45
+URxvt.borderLess:       false
+URxvt.transparent:      false
+URxvt.depth:            32
+!URxvt.background:       #202020
+URxvt.foreground:       white
+
+URxvt.saveLines:        10000
+URxvt.xftAntialias:     true
+URxvt.font:             xft:inconsolata:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.boldFont:         xft:inconsolata:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.italicFont:       xft:inconsolata:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.bolditalicFont:   xft:inconsolata:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+
+URxvt.internalBorder:   0
+!URxvt.underlineColor:	#999999
+URxvt.cursorBlink:      true
+!URxvt.cursorColor:      #EEEEEE
+!URxvt.cursorColor2:     #000000
+
+URxvt.scrollBar:        False
+URxvt.scrollBar_right:  False
+ 
+URxvt.scrollTtyOutput:  False
+URxvt.scrollWithBuffer: True
+URxvt.scrollTtyKeypress: True
+URxvt.urgentOnBell: True
+
+!TomorrowNight
+#define t_background        #1d1f21
+#define t_current_line      #282a2e
+#define t_selection      	#373b41
+#define t_foreground      	#c5c8c6
+#define t_comment	     	#969896
+#define t_red		     	#cc6666
+#define t_orange	     	#de935f
+#define t_yellow        	#f0c674
+#define t_green	        	#b5bd68
+#define t_aqua	        	#8abeb7
+#define t_blue	        	#81a2be
+#define t_purple        	#b294bb
+
+
+*.foreground:   t_foreground
+*.background:   t_background
+*.cursorColor:  #aeafad
+
+! Black / Grey
+*.color0:       #000000
+*.color8:       #666666
+
+! Red / Bright Red
+*.color1:       t_red
+*.color9:       #FF3334
+
+! Green + Bright Green
+*.color2:       t_green
+*.color10:      #9ec400
+
+! Yellow (Orange) + Bright Yellow (Yellow)
+*.color3:       t_orange
+*.color11:      t_yellow
+
+! Blue + Bright Blue
+*.color4:       t_blue
+*.color12:      t_blue
+
+! Magenta (Purple) + Bright Magenta
+*.color5:       t_purple
+*.color13:      #b777e0
+
+! Cyan (Aqua) + Bright Cyan
+*.color6:       t_aqua
+*.color14:      #54ced6
+
+! Light Grey (Selection) + White (Current Line)
+*.color7:       t_selection
+*.color15:      t_current_line
+
+
+!Emacs.font:     inconsolata-13
+!Emacs.geometry: 90x60
+Xft.hinting:    1

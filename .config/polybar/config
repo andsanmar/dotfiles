@@ -1,0 +1,203 @@
+[colors]
+background = #1d1f21
+background-alt = #373b41
+foreground = #c5c8c6
+foreground-alt = #969896
+primary = #FFFFFF
+secondary = #e60053
+alert = #bd2c40
+
+[bar/base]
+  width = 100%
+  height = 20
+  ;radius = 6.0
+  fixed-center = false
+
+  enable-ipc = true
+
+  background = ${colors.background}
+  foreground = ${colors.foreground}
+
+  line-size = 2
+  line-color = #f00
+
+  border-size = 0
+  border-color = #00000000
+
+  padding-left = 2
+  padding-right = 2
+
+  module-margin-left = 5
+  module-margin-right = 0
+
+  font-0 = fixed:pixelsize=9;1
+  font-1 = MaterialIcons:size=9;1
+  font-2 = FontAwesome:size=9:antialias=true;3
+  font-3 = fixed:pixelsize=9:weight=bold;1:
+
+  modules-left = i3
+  modules-center = xwindow
+  modules-right = spotify pomo volume wlan eth battery date
+
+  tray-position = right
+  tray-padding = 2
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+#label = %title:0:30:...%
+
+[module/i3]
+  type = internal/i3
+  format = <label-state> <label-mode>
+  index-sort = true
+  wrapping-scroll = false
+
+  label-mode-padding = 2
+  label-mode-foreground = #000
+  label-mode-background = ${colors.primary}
+
+  label-focused = %index% %icon%
+  label-focused-background = ${colors.background-alt}
+  label-focused-underline = ${colors.primary}
+  label-focused-padding = 2
+
+  label-unfocused = %index% %icon%
+  label-unfocused-padding = 2
+
+  label-visible = V %index%
+  label-visible-background = ${self.label-focused-background}
+  label-visible-underline = ${self.label-focused-background}
+  label-visible-padding = ${self.label-focused-padding}
+
+  label-urgent = %index%!
+  label-urgent-background = ${colors.alert}
+  label-urgent-padding = 2
+
+  ; TODO: finish icons
+  # ws-icon-0 = 1;
+  # ws-icon-1 = 2;
+  # ws-icon-2 = 3;
+  # ws-icon-3 = 4;
+
+[module/pomo]
+  type = custom/script
+
+  ; TODO: create support for a progress bar
+  ; exec = echo  %{F#0a0}`/home/wilson/Dev/pomodoro/pomo_state.py pb 0`%{F-}%{F#ddd}`/home/wilson/Dev/pomodoro/pomo_state.py pb 1`%{F-}
+  exec = echo %{T4}`/home/wilson/Dev/pomodoro/pomo_state.py`%{T-}
+  exec-if = pgrep -f pomo_runner
+
+  interval = 0.5
+  format-underline = #f00
+
+[module/spotify]
+  type = custom/script
+
+  ;hook-0 = echo  `playerctl metadata xesam:artist` - `playerctl metadata xesam:title`
+  ;initial = 1
+
+  exec = echo  `playerctl metadata xesam:artist` - `playerctl metadata xesam:title`
+  exec-if = pgrep -x "spotify"
+
+  interval = 0.5
+
+[module/backlight]
+  type = custom/script
+
+  exec = echo " $( printf "%.0f" `light`)%"
+
+  interval = 10.0
+
+[module/wlan]
+  type = internal/network
+  interface = wlp2s0
+  interval = 5.0
+
+  format-connected = <label-connected>
+  ;format-connected-underline = #9f78e1
+  label-connected =  %essid%
+
+  format-disconnected =
+  ;format-disconnected = <label-disconnected>
+  ;format-disconnected-underline = ${self.format-connected-underline}
+  ;label-disconnected = %ifname% disconnected
+  ;label-disconnected-foreground = ${colors.foreground-alt}
+
+  ;ramp-signal-0 = a
+  ;ramp-signal-1 = b
+  ;ramp-signal-2 = c
+  ;ramp-signal-3 = d
+  ;ramp-signal-4 = e
+  ;ramp-signal-5 = f
+  ;ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/eth]
+  type = internal/network
+  interface = net0
+  interval = 3.0
+
+  format-connected-underline = #55aa55
+  format-connected-prefix = " "
+  format-connected-prefix-foreground = ${colors.foreground-alt}
+  label-connected = %local_ip%
+
+  format-disconnected =
+  ;format-disconnected = <label-disconnected>
+  ;format-disconnected-underline = ${self.format-connected-underline}
+  ;label-disconnected = %ifname% disconnected
+  ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+  type = internal/date
+	date =  %%{F#999}%a %e %b %H:%M%%{F-}
+
+[module/volume]
+	type = internal/volume
+	format-volume = <ramp-volume> <label-volume>
+	label-muted =  mute
+	label-muted-foreground = #66
+	label-muted-font = 4
+	ramp-volume-0 = 
+	ramp-volume-1 = 
+	ramp-volume-2 = 
+	ramp-volume-3 = 
+
+[module/battery]
+  type = internal/battery
+  battery = BAT0
+  adapter = ADP1
+  full-at = 98
+
+  ; not currently being used
+  color-discharging = #ffb52a
+  color-charging = #00ee00
+
+  format-charging = <animation-charging> <label-charging>
+  format-discharging = <ramp-capacity> <label-discharging>
+
+  format-full-prefix =
+  format-full-prefix-foreground = ${colors.foreground-alt}
+
+  ; font awesome icons
+  ramp-capacity-0 = 
+  ramp-capacity-1 = 
+  ramp-capacity-2 = 
+  ramp-capacity-3 = 
+  ramp-capacity-4 = 
+
+  animation-charging-0 = 
+  animation-charging-1 = 
+  animation-charging-2 = 
+  animation-charging-3 = 
+  animation-charging-4 = 
+  animation-charging-framerate = 500
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+  margin-top = 5
+  margin-bottom = 5
+
+; vim:ft=dosini

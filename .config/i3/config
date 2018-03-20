@@ -157,12 +157,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #2f2f2f
-set $inactive-bg-color   #2f2f2f
-set $text-color          #ffffff
-set $inactive-text-color #878787
-set $urgent-bg-color     #393939
-set $indicator-color     #a0a0a0
+set $bg-color            #1d1f21
+set $inactive-bg-color   #282a2e
+set $text-color          #c5c8c6
+set $inactive-text-color #969896
+set $urgent-bg-color     #373b41
+set $indicator-color     #282a2e
 
 # set window colors
 #                       border             background         text                 indicator
@@ -174,20 +174,23 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-#        status_command i3status-rs .config/i3/status.toml
-	status_command i3status
-	position top
-	font pango:monospace 9       
-	colors {
-		background $bg-color
-		separator #a0a0a0
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-}
+# bar {
+# 	#status_command i3status-rs .config/i3/status.toml
+# 	status_command polybar main
+# 	#status_command i3status
+# 	#status_command i3blocks
+# 	#status_command echo '{"version":1}[[],'; xtitle -s -f '[{"full_text": "%s"}],';
+# 	position top
+# 	font pango:monospace 9       
+# 	colors {
+# 		background $bg-color
+# 		separator #a0a0a0
+# 		#                  border             background         text
+# 		focused_workspace  $bg-color          $bg-color          $text-color
+# 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+# 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+# 	}
+# }
 
 # floating windows
 for_window [class="Pavucontrol"] floating enable
@@ -239,7 +242,7 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
 # Autostart apps
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id "compton -cC"
+#exec --no-startup-id "compton -cC"
 exec --no-startup-id nm-applet
 exec --no-startup-id "nitrogen --restore"
 # exec --no-startup-id "sleep 5s && kalu"
@@ -253,11 +256,17 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 bindsym $mod+ctrl+f exec firefox
 bindsym $mod+ctrl+e exec emacs
 bindsym $mod+ctrl+w exec thunar
-bindsym $mod+ctrl+t exec ~/Documents/Personal/Cosas/Telegram/Telegram
+bindsym $mod+ctrl+t exec ~/fls/per/Cosas/Telegram/Telegram
 
 # bindsym $mod+ctrl+x exec shutdown now
 
 # Wallpaper
-exec feh --bg-fill Pictures/Wallpapers/particles.jpg
+exec feh --bg-fill ~/.wll/glider.png
 exec setxkbmap -option ctrl:nocaps
 #for_window [class="^(?i)firefox"] border pixel 1
+
+# Polybar
+exec_always ./.config/polybar/launch.sh
+# We eliminate the titles (we have them on polybar)
+default_border none
+default_floating_border normal
