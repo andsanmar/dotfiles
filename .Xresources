@@ -85,7 +85,7 @@ URxvt.urgentOnBell: True
 
 ! Blue + Bright Blue
 *.color4:       t_blue
-*.color12:      t_blue
+*.color12:      #4093a6
 
 ! Magenta (Purple) + Bright Magenta
 *.color5:       t_purple

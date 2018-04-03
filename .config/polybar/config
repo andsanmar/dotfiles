@@ -4,8 +4,8 @@ background-alt = #373b41
 foreground = #c5c8c6
 foreground-alt = #969896
 primary = #FFFFFF
-secondary = #e60053
-alert = #bd2c40
+secondary = #de935f
+alert = #cc6666
 
 [bar/base]
   width = 100%
@@ -24,11 +24,11 @@ alert = #bd2c40
   border-size = 0
   border-color = #00000000
 
-  padding-left = 2
-  padding-right = 2
+  padding-left = 0
+  padding-right = 0
 
-  module-margin-left = 5
-  module-margin-right = 0
+  module-margin-left = 2
+  module-margin-right = 1
 
   font-0 = fixed:pixelsize=9;1
   font-1 = MaterialIcons:size=9;1
@@ -37,7 +37,7 @@ alert = #bd2c40
 
   modules-left = i3
   modules-center = xwindow
-  modules-right = spotify pomo volume wlan eth battery date
+  modules-right = music volume backlight wlan eth battery date powermenu
 
   tray-position = right
   tray-padding = 2
@@ -45,7 +45,7 @@ alert = #bd2c40
 [module/xwindow]
 type = internal/xwindow
 label = %title%
-#label = %title:0:30:...%
+; label = %title:0:30:...%
 
 [module/i3]
   type = internal/i3
@@ -75,39 +75,25 @@ label = %title%
   label-urgent-padding = 2
 
   ; TODO: finish icons
-  # ws-icon-0 = 1;
-  # ws-icon-1 = 2;
-  # ws-icon-2 = 3;
-  # ws-icon-3 = 4;
+  # ws-icon-0 = 10;
+  ; ws-icon-0 = 1;
+  ; ws-icon-1 = 2;
+  ; ws-icon-2 = 3;
 
-[module/pomo]
+[module/music]
   type = custom/script
-
-  ; TODO: create support for a progress bar
-  ; exec = echo  %{F#0a0}`/home/wilson/Dev/pomodoro/pomo_state.py pb 0`%{F-}%{F#ddd}`/home/wilson/Dev/pomodoro/pomo_state.py pb 1`%{F-}
-  exec = echo %{T4}`/home/wilson/Dev/pomodoro/pomo_state.py`%{T-}
-  exec-if = pgrep -f pomo_runner
-
-  interval = 0.5
-  format-underline = #f00
-
-[module/spotify]
-  type = custom/script
-
-  ;hook-0 = echo  `playerctl metadata xesam:artist` - `playerctl metadata xesam:title`
-  ;initial = 1
 
   exec = echo  `playerctl metadata xesam:artist` - `playerctl metadata xesam:title`
-  exec-if = pgrep -x "spotify"
+  exec-if = pgrep -x "spotify" || pgrep -x "vlc"
 
-  interval = 0.5
+  interval = 5
 
 [module/backlight]
-  type = custom/script
+  type = internal/backlight
 
-  exec = echo " $( printf "%.0f" `light`)%"
-
-  interval = 10.0
+  card = intel_backlight
+  format = <label>
+  label =  %percentage%%
 
 [module/wlan]
   type = internal/network
@@ -150,7 +136,7 @@ label = %title%
 
 [module/date]
   type = internal/date
-	date =  %%{F#999}%a %e %b %H:%M%%{F-}
+	date =  %%{F${colors.foreground}%a %e %b %H:%M%%{F-}
 
 [module/volume]
 	type = internal/volume
@@ -192,6 +178,39 @@ label = %title%
   animation-charging-3 = 
   animation-charging-4 = 
   animation-charging-framerate = 500
+
+[module/powermenu]
+type = custom/menu
+;format-padding = 1
+label-open = ""
+label-separator = "  "
+menu-0-0 = ""
+menu-0-0-exec = menu-open-1
+menu-0-1 = ""
+menu-0-1-exec = menu-open-2
+menu-0-2 = ""
+menu-0-2-exec = menu-open-3
+menu-0-3 = ""
+menu-0-3-exec = menu-open-4
+menu-0-4 = ""
+menu-0-4-exec = menu-open-5
+
+menu-1-0 = ""
+menu-1-0-exec = systemctl hibernate -i
+
+menu-2-0 = ""
+menu-2-0-exec = systemctl reboot -i
+
+menu-3-0 = ""
+menu-3-0-exec = systemctl poweroff -i
+
+menu-4-0 = ""
+menu-4-0-exec = "~/Bin/lock suspend"
+menu-5-0 = ""
+menu-5-0-exec = i3-msg exit
+
+
+
 
 [settings]
 screenchange-reload = true
