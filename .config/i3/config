@@ -85,7 +85,7 @@ bindsym $mod+Shift+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -221,8 +221,8 @@ bindsym $mod+F7 exec mocp --previous
 bindsym $mod+F8 exec mocp --next
 
 # App shortcuts
-bindsym $mod+w exec "/usr/bin/i3-dmenu-desktop"
-#bindsym $mod+Space exec "/usr/bin/i3-dmenu-desktop"
+#bindsym $mod+w exec "/usr/bin/i3-dmenu-desktop"
+bindsym $mod+space exec "/usr/bin/i3-dmenu-desktop"
 
 # Redirect sound to headphones
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
@@ -235,13 +235,15 @@ exec --no-startup-id "nitrogen --restore"
 # exec --no-startup-id "sleep 5s && kalu"
 
 # Brightness
-
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
+# Emacs Daemon
+exec emacs --daemon
+
 # My Programs
 bindsym $mod+ctrl+f exec firefox
-bindsym $mod+ctrl+e exec emacs
+bindsym $mod+ctrl+e exec emacsclient -c
 bindsym $mod+ctrl+a exec urxvt -e ranger
 bindsym $mod+ctrl+q exec urxvt -e mc
 bindsym $mod+ctrl+v exec urxvt -e cava
@@ -258,7 +260,8 @@ exec setxkbmap -option ctrl:nocaps
 exec_always ./.config/polybar/launch.sh
 
 # We eliminate the titles (we have them on polybar)
-default_border none
+# default_border none
+default_border pixel 1
 default_floating_border normal
 
 # To do screen captures use scrot

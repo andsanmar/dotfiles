@@ -10,7 +10,7 @@
 
 *** Terminal: *urxvt*
 
-*** File Manager: *mc*
+*** File Manager: *mc, ranger, dired... (I'm not decided yet)*
 
 ** Color theme
 

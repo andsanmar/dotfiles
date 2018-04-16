@@ -37,7 +37,7 @@ alert = #cc6666
 
   modules-left = i3
   modules-center = xwindow
-  modules-right = music volume backlight wlan eth battery date powermenu
+  modules-right = music volume backlight battery date powermenu network
 
   tray-position = right
   tray-padding = 2
@@ -97,7 +97,7 @@ label = %title%
 
 [module/wlan]
   type = internal/network
-  interface = wlp2s0
+  interface = wlp58s0
   interval = 5.0
 
   format-connected = <label-connected>
@@ -120,7 +120,7 @@ label = %title%
 
 [module/eth]
   type = internal/network
-  interface = net0
+  interface = lo
   interval = 3.0
 
   format-connected-underline = #55aa55
@@ -135,8 +135,9 @@ label = %title%
   ;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
-  type = internal/date
-	date =  %%{F${colors.foreground}%a %e %b %H:%M%%{F-}
+	type = internal/date
+	date =  %%{F${colors.foreground}%H:%M%%{F-}
+	;date =  %%{F${colors.foreground}%a %e %b %H:%M%%{F-}
 
 [module/volume]
 	type = internal/volume
