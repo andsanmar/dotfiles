@@ -85,7 +85,7 @@ bindsym $mod+Shift+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+bindsym $mod+x focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -129,7 +129,7 @@ bindsym $mod+Shift+r restart
 # lock
 # bindsym $mod+Shift+x exec i3lock --color 475263
 bindsym $mod+l exec betterlockscreen -l
-bindsym $mod+ctrl+l exec betterlockscreen -s
+bindsym $mod+ctrl+l exec systemctl suspend
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -166,7 +166,7 @@ set $indicator-color     #282a2e
 
 # set window colors
 #                       border             background         text                 indicator
-client.focused          $bg-color          $bg-color          $text-color          $indicator-color
+client.focused          $inactive-bg-color $inactive-bg-color          $text-color          $indicator-color
 client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
 client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color
@@ -253,8 +253,9 @@ bindsym $mod+ctrl+t exec ~/.tlg
 
 # Wallpaper
 exec nitrogen --set-centered ~/.wll/glider.png
+
 exec setxkbmap -option ctrl:nocaps
-#for_window [class="^(?i)firefox"] border pixel 1
+#for_window [class="^(?i)firefox"] floating enable #border pixel 1
 
 # Polybar
 exec_always ./.config/polybar/launch.sh
@@ -264,4 +265,12 @@ exec_always ./.config/polybar/launch.sh
 default_border pixel 1
 default_floating_border normal
 
+# To activate floating
+# for_window [class="[.]*"] floating enable
+
 # To do screen captures use scrot
+
+bindsym $mod+plus  gaps inner current plus 5
+bindsym $mod+minus gaps inner current minus 5
+bindsym $mod+p     gaps inner current set 15; exec nitrogen --set-scaled ~/.wll/mountain.jpg
+bindsym $mod+o     gaps inner current set 0; exec nitrogen --set-centered ~/.wll/glider.png
