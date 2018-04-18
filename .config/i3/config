@@ -222,7 +222,7 @@ bindsym $mod+F8 exec mocp --next
 
 # App shortcuts
 #bindsym $mod+w exec "/usr/bin/i3-dmenu-desktop"
-bindsym $mod+space exec "/usr/bin/i3-dmenu-desktop"
+bindsym $mod+space exec rofi -show drun
 
 # Redirect sound to headphones
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
@@ -245,7 +245,6 @@ exec emacs --daemon
 bindsym $mod+ctrl+f exec firefox
 bindsym $mod+ctrl+e exec emacsclient -c
 bindsym $mod+ctrl+a exec urxvt -e ranger
-bindsym $mod+ctrl+q exec urxvt -e mc
 bindsym $mod+ctrl+v exec urxvt -e cava
 bindsym $mod+ctrl+t exec ~/.tlg
 
@@ -268,9 +267,13 @@ default_floating_border normal
 # To activate floating
 # for_window [class="[.]*"] floating enable
 
-# To do screen captures use scrot
-
+# Gaps
 bindsym $mod+plus  gaps inner current plus 5
 bindsym $mod+minus gaps inner current minus 5
 bindsym $mod+p     gaps inner current set 15; exec nitrogen --set-scaled ~/.wll/mountain.jpg
 bindsym $mod+o     gaps inner current set 0; exec nitrogen --set-centered ~/.wll/glider.png
+
+bindsym $mod+y border toggle
+# To change polybar
+#bindsym $mod+F2 exec ./.config/polybar/launch.sh
+# To do screen captures use scrot

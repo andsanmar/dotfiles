@@ -10,7 +10,11 @@
 
 *** Terminal: *urxvt*
 
-*** File Manager: *mc, ranger, dired... (I'm not decided yet)*
+*** File Manager: *ranger, dired... (I'm not decided yet)*
+
+*** Menu: *rofi*
+
+It uses the base16-themes
 
 ** Color theme
 
@@ -37,8 +41,11 @@ Tomorrow Night theme:
 This schema is from: [[https://github.com/chriskempson/tomorrow-theme]]
 
 ** Behave and look
+
+EMPTY:
 #+NAME:   fig:SED-HR4049
 [[./pic/empty.png]]
 
+WITH GAPS ACTIVATED
 #+NAME:   fig:SED-HR4049
 [[./pic/gaps.png]]

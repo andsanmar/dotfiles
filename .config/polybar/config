@@ -18,7 +18,7 @@ alert = #cc6666
   background = ${colors.background}
   foreground = ${colors.foreground}
 
-  line-size = 2
+  line-size = 0
   line-color = #f00
 
   border-size = 0
@@ -35,8 +35,8 @@ alert = #cc6666
   font-2 = FontAwesome:size=9:antialias=true;3
   font-3 = fixed:pixelsize=9:weight=bold;1:
 
-  modules-left = i3
-  modules-center = xwindow
+  modules-left = i3 xwindow
+  ;modules-center = xwindow
   modules-right = music volume backlight battery date powermenu network
 
   tray-position = right
@@ -45,7 +45,7 @@ alert = #cc6666
 [module/xwindow]
 type = internal/xwindow
 label = %title%
-; label = %title:0:30:...%
+label-maxlen = 30
 
 [module/i3]
   type = internal/i3
@@ -85,6 +85,7 @@ label = %title%
 
   exec = echo  `playerctl metadata xesam:artist` - `playerctl metadata xesam:title`
   exec-if = pgrep -x "spotify" || pgrep -x "vlc"
+  click-left = playerctl play-pause
 
   interval = 5
 
@@ -211,13 +212,11 @@ menu-5-0 = ""
 menu-5-0-exec = i3-msg exit
 
 
-
-
 [settings]
 screenchange-reload = true
 
-[global/wm]
-  margin-top = 5
-  margin-bottom = 5
+; [global/wm]
+;   margin-top = 5
+;   margin-bottom = 5
 
 ; vim:ft=dosini
