@@ -39,3 +39,6 @@ This schema is from: [[https://github.com/chriskempson/tomorrow-theme]]
 ** Behave and look
 #+NAME:   fig:SED-HR4049
 [[./pic/empty.png]]
+
+#+NAME:   fig:SED-HR4049
+[[./pic/gaps.png]]
