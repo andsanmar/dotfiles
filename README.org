@@ -16,6 +16,10 @@
 
 It uses the base16-themes
 
+*** GTK theme:
+
+I've done my own GTK theme from oomox with my colour theme (it's in this repository)
+
 ** Color theme
 
 Tomorrow Night theme:
