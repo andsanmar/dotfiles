@@ -1,31 +1,46 @@
 * Dotfiles
 
-** My setup:
+** My setup: ♥
 
-*** WM: *i3*
+*** WM: i3
 
-*** Bar: *polybar*
+    Full documented-customizable wm 
 
-*** Editor: *emacs*
+*** Bar: polybar
+    
+    It's really pretty
 
-*** Terminal: *urxvt*
+*** Editor: emacs ℰ
 
-*** File Manager: *ranger, dired... (I'm not decided yet)*
+    Totally customizable text editor
 
-*** Menu: *rofi*
+**** Features
+     
+     Doom themes: tomorrow night
+     Packages: Magit, spaceline, smartparens, hideshow...
+     Languages: Haskell, Rust, C, Python...
 
-It uses the base16-themes
+*** Terminal: urxvt
+
+    Fast, lightweight, customizable
+
+*** File Manager: ranger
+
+    Terminal based, easy to use, why not?
+
+*** Menu: rofi
+
+    Pretty, it uses the base16-themes -> tomorrow night
 
 *** GTK theme:
 
-I've done my own GTK theme from oomox with my colour theme (it's in this repository)
+    I've done my own GTK theme from oomox with my colour theme (sorry for so much css code, it's in this repository)
 
 ** Color theme
 
-Tomorrow Night theme:
+*** Tomorrow Night theme:
 
-*** Palette:
-
+Palette:
 #+NAME:   fig:SED-HR4049
 [[./pic/Tomorrow-Night-Palette.png]]
 
@@ -43,13 +58,20 @@ Tomorrow Night theme:
 | #b294bb | Purple       |
 
 This schema is from: [[https://github.com/chriskempson/tomorrow-theme]]
-
+    
 ** Behave and look
 
-EMPTY:
-#+NAME:   fig:SED-HR4049
+*Empty*
+#+NAME:   EMPTY
+#+ATTR_ORG: :width 512
 [[./pic/empty.png]]
 
-WITH GAPS ACTIVATED
-#+NAME:   fig:SED-HR4049
+*With gaps activated*
+#+NAME:   GAPS
+#+ATTR_ORG: :width 512
 [[./pic/gaps.png]]
+
+*Dual powah*
+#+NAME:   DUAL
+#+ATTR_ORG: :width 1024
+[[./pic/dual.png]]

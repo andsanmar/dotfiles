@@ -116,6 +116,17 @@
 (setq completion-ignore-case  t)
 (setq read-file-name-completion-ignore-case  t)
 (setq read-buffer-completion-ignore-case  t)
+
+;; smex
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+					; when Smex is auto-initialized on its first run.
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+
 ;;; init.el ends here
 
 (custom-set-variables
@@ -129,7 +140,7 @@
     ("a866134130e4393c0cad0b4f1a5b0dd580584d9cf921617eee3fd54b6f09ac37" default)))
  '(package-selected-packages
    (quote
-    (sudo-edit intero material-theme ac-racer flycheck-rust rust-playground ob-prolog cargo racer all-the-icons-ivy all-the-icons-dired all-the-icons-gnus hideshow-org badwolf-theme ghc spaceline-all-the-icons doom-themes color-theme-sanityinc-tomorrow use-package spaceline smartparens rainbow-mode rainbow-delimiters multi-term magit haskell-mode flycheck emojify elpy autothemer auto-complete all-the-icons))))
+    (pdf-tools smex sudo-edit intero material-theme ac-racer flycheck-rust rust-playground ob-prolog cargo racer all-the-icons-ivy all-the-icons-dired all-the-icons-gnus hideshow-org badwolf-theme ghc spaceline-all-the-icons doom-themes color-theme-sanityinc-tomorrow use-package spaceline smartparens rainbow-mode rainbow-delimiters multi-term magit haskell-mode flycheck emojify elpy autothemer auto-complete all-the-icons))))
 
 ;;; Commentary:
 ;;; Code:
