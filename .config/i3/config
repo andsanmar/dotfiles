@@ -139,16 +139,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 10 px or 2 ppt
+        bindsym k resize grow height 10 px or 2 ppt
+        bindsym l resize shrink height 10 px or 2 ppt
+        bindsym ntilde resize grow width 10 px or 2 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 2 ppt
+        bindsym Down resize grow height 10 px or 2 ppt
+        bindsym Up resize shrink height 10 px or 2 ppt
+        bindsym Right resize grow width 10 px or 2 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -244,7 +244,7 @@ exec emacs --daemon
 # My Programs
 bindsym $mod+ctrl+f exec firefox
 bindsym $mod+ctrl+e exec emacsclient -c
-bindsym $mod+ctrl+a exec urxvt -e ranger
+bindsym $mod+ctrl+a exec thunar
 bindsym $mod+ctrl+v exec urxvt -e cava
 bindsym $mod+ctrl+t exec ~/.tlg
 
@@ -274,6 +274,12 @@ bindsym $mod+p     gaps inner current set 15; exec nitrogen --set-scaled ~/.wll/
 bindsym $mod+o     gaps inner current set 0; exec nitrogen --set-centered ~/.wll/glider.png
 
 bindsym $mod+y border toggle
+
+# Touchpad enable/disable (my touchpad is xinput n 11)
+bindsym $mod+d exec xinput --disable 11
+bindsym $mod+e exec xinput --enable 11
 # To change polybar
 #bindsym $mod+F2 exec ./.config/polybar/launch.sh
 # To do screen captures use scrot
+bindsym Print exec scrot ~/pic/sh/%b%d::%H%M%S.png
+for_window [class="Thunar"] floating enable

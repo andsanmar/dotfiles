@@ -24,9 +24,9 @@
 
     Fast, lightweight, customizable
 
-*** File Manager: ranger
+*** File Manager: thunar
 
-    Terminal based, easy to use, why not?
+    Keep it simple
 
 *** Menu: rofi
 

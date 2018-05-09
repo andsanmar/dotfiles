@@ -7,6 +7,7 @@ primary = #FFFFFF
 secondary = #de935f
 alert = #cc6666
 
+
 [bar/base]
   width = 100%
   height = 20
@@ -36,7 +37,6 @@ alert = #cc6666
   font-3 = fixed:pixelsize=9:weight=bold;1:
 
   modules-left = i3 xwindow
-  ;modules-center = xwindow
   modules-right = music volume backlight battery date powermenu network
 
   tray-position = right
@@ -57,28 +57,34 @@ label-maxlen = 30
   label-mode-foreground = #000
   label-mode-background = ${colors.primary}
 
-  label-focused = %index% %icon%
+  label-focused = %icon%
   label-focused-background = ${colors.background-alt}
   label-focused-underline = ${colors.primary}
   label-focused-padding = 2
 
-  label-unfocused = %index% %icon%
+  label-unfocused = %icon%
   label-unfocused-padding = 2
 
-  label-visible = V %index%
+  label-visible = V %icon%
   label-visible-background = ${self.label-focused-background}
   label-visible-underline = ${self.label-focused-background}
   label-visible-padding = ${self.label-focused-padding}
 
-  label-urgent = %index%!
+  label-urgent = %icon%!
   label-urgent-background = ${colors.alert}
   label-urgent-padding = 2
 
   ; TODO: finish icons
-  # ws-icon-0 = 10;
-  ; ws-icon-0 = 1;
-  ; ws-icon-1 = 2;
-  ; ws-icon-2 = 3;
+  ws-icon-0 = 10;
+  ws-icon-1 = 1;
+  ws-icon-2 = 2;
+  ws-icon-3 = 3;
+  ws-icon-4 = 4;
+  ws-icon-5 = 5;
+  ws-icon-6 = 6;
+  ws-icon-7 = 7;
+  ws-icon-8 = 8;8
+  ws-icon-9 = 9;9
 
 [module/music]
   type = custom/script
@@ -185,7 +191,9 @@ label-maxlen = 30
 type = custom/menu
 ;format-padding = 1
 label-open = ""
-label-separator = "  "
+label-separator = " "
+label-open-foreground = ${colors.alert}
+label-close-foreground = ${colors.alert}
 menu-0-0 = ""
 menu-0-0-exec = menu-open-1
 menu-0-1 = ""
@@ -207,7 +215,7 @@ menu-3-0 = ""
 menu-3-0-exec = systemctl poweroff -i
 
 menu-4-0 = ""
-menu-4-0-exec = "~/Bin/lock suspend"
+menu-4-0-exec = systemctl suspend -i
 menu-5-0 = ""
 menu-5-0-exec = i3-msg exit
 

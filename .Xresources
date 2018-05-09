@@ -12,7 +12,7 @@
 ! Ctrl-p: select previous url
 !==========
 
-URxvt.perl-lib:         /home/cofi/.urxvt/
+URxvt.perl-lib:         /home/andsanmar/.urxvt/
 URxvt.perl-ext:         option-popup,matcher,selection,mark-yank-urls
 URxvt.urlLauncher:      /usr/bin/firefox
 URxvt.underlineURLs:    true
@@ -23,6 +23,7 @@ URxvt.cutchars:         `"()'*<>[]{|}"
 URxvt.geometry:         100x45
 URxvt.borderLess:       false
 URxvt.transparent:      false
+!URxvt.shading:          20
 URxvt.depth:            32
 !URxvt.background:       #202020
 URxvt.foreground:       white
