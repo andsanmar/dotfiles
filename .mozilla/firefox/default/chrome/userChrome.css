@@ -1,0 +1,134 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+ /* 
+ 
+ MONOCHROMATIC
+ 
+ - First attempt at Firefox CSS 
+ 
+ - By Liamb135
+ - With help from /r/FirefoxCSS 
+ 
+ - Works with Default, White and Dark Default Firefox 57 Themes.
+ - Compact Density.
+ 
+ */
+
+ 
+ /* ---------------------------------------
+ 
+                IMPORTANT
+
+ Short URL by hensm: https://goo.gl/eGwYEL 
+ Place bindings.xml in the same folder as userChrome.css 
+ 
+ Scrollbar by mrkwatz: https://goo.gl/FPv1qR
+ - Follow Installation instructions 
+ 
+*/------------------------------------------
+
+#urlbar {
+-moz-binding: url("bindings.xml#urlbar") !important; 
+}
+
+#urlbar .urlbar-input-box { /* Centre URL Text */
+width: 30;
+}
+ 
+#TabsToolbar,#nav-bar { 
+height: 33px !important;
+margin-bottom: -1px;
+}
+
+#TabsToolbar {
+margin-left:50.15vw !important;
+margin-right:44px;
+}
+
+#nav-bar {
+margin-top:-31px !important;
+margin-right: 50vw!important;
+}
+
+/*#PanelUI-button,
+#customization-panel-container,
+#customization-panelWrapper .panel-arrow { /* Move Hamburger to left */
+-moz-box-ordinal-group: 0 !important;
+margin-right: -6px !important;
+margin-top: 1px !important;
+}*/
+
+#PlacesToolbar {
+margin-top: 2px;
+margin-bottom: -2px;
+}
+
+#page-action-buttons {
+display: none !important;
+}
+
+#urlbar,
+.searchbar-textbox {
+box-shadow: none !important;
+}
+
+#urlbar:hover,
+.searchbar-textbox:hover {
+box-shadow: none !important;
+}         
+ 
+/*#urlbar {
+background-color: transparent !important;  /* Transparent URL Bar */
+}*/
+
+ /* Centre Bookmarks */
+
+.bookmarks-toolbar-items>.scrollbox-innerbox {
+-moz-box-pack: center!important;
+}
+
+#personal-bookmarks, #PlacesToolbarItems {
+-moz-box-pack: center!important;
+}
+
+.bookmark-item > .toolbarbutton-text {
+margin-top: -1px !important;
+}
+
+.bookmark-item .toolbarbutton-icon {
+display: none !important;
+}
+
+#PlacesToolbar .bookmark-item:hover { /* Hide Mouse-over Effect */
+background: transparent !important;
+filter:invert(50%)
+}
+
+ /* Title Changed Notification */
+ 
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged] {
+filter:grayscale(100%)	
+background-position: center bottom !important;
+background-size: 4px !important;
+}
+/*
+.tabbrowser-tab {
+  --tab-min-width: 55px;
+  -moz-box-flex: 0 !important;
+  transition: all 0.2s;
+  width: -10px !important;
+}
+
+.tabbrowser-tab[visuallyselected="true"] {
+  -moz-box-flex: 1 !important;
+}
+
+.tabbrowser-tabs > arrowscrollbox {
+  height: 45px !important;
+}
+*/
+ /* Scrollbar */
+
+toolbarbutton#alltabs-button {
+	-moz-binding: url("userChrome.xml#js");
+}

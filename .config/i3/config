@@ -221,7 +221,7 @@ bindsym $mod+F7 exec mocp --previous
 bindsym $mod+F8 exec mocp --next
 
 # App shortcuts
-#bindsym $mod+w exec "/usr/bin/i3-dmenu-desktop"
+bindsym $mod+w exec "/usr/bin/i3-dmenu-desktop"
 bindsym $mod+space exec rofi -show drun
 
 # Redirect sound to headphones
@@ -247,6 +247,7 @@ bindsym $mod+ctrl+e exec emacsclient -c
 bindsym $mod+ctrl+a exec thunar
 bindsym $mod+ctrl+v exec urxvt -e cava
 bindsym $mod+ctrl+t exec ~/.tlg
+bindsym $mod+ctrl+m exec thunderbird
 
 # bindsym $mod+ctrl+x exec shutdown now
 
@@ -283,3 +284,5 @@ bindsym $mod+e exec xinput --enable 11
 # To do screen captures use scrot
 bindsym Print exec scrot ~/pic/sh/%b%d::%H%M%S.png
 for_window [class="Thunar"] floating enable
+for_window [class="[.]*"] floating enable
+exec xss-lock -- betterlockscreen -l

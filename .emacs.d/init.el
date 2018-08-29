@@ -88,6 +88,8 @@
   (global-set-key (kbd "C-S-z") 'redo)
   )
 
+(global-hl-line-mode 1)
+
 ;; Spaceline all-the-icons
 (require 'spaceline-all-the-icons)
 (setq spaceline-all-the-icons-separator-type 'none)
@@ -99,9 +101,9 @@
 (spaceline-toggle-all-the-icons-time-off)
 (spaceline-toggle-all-the-icons-buffer-position-on)
 
-;; Golden Ratio
-(require 'golden-ratio)
-(golden-ratio-mode 1)
+;; ;; Golden Ratio
+;; (require 'golden-ratio)
+;; (golden-ratio-mode 1)
 
 ;; Rust
 (setq racer-cmd "~/.cargo/bin/racer") ;; Rustup binaries PATH
@@ -111,6 +113,10 @@
 (add-hook 'racer-mode-hook #'company-mode)
 (with-eval-after-load 'rust-mode
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+(add-hook 'racer-mode-hook #'company-mode)
+(require 'rust-mode)
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
 
 ;; Search improved
 (setq completion-ignore-case  t)
@@ -145,6 +151,8 @@
 
 ;; I LOVE this ccommand
 (global-set-key (kbd "C-c C-v") 'undo-tree-visualize)
+(global-set-key (kbd "<f2>") 'undo-tree-visualize)
+(global-set-key (kbd "<f5>") 'buffer-menu)
 ;;; init.el ends here
 
 (custom-set-variables
@@ -155,10 +163,10 @@
  '(custom-enabled-themes (quote (doom-tomorrow-night)))
  '(custom-safe-themes
    (quote
-    ("a866134130e4393c0cad0b4f1a5b0dd580584d9cf921617eee3fd54b6f09ac37" default)))
+    ("356e5cbe0874b444263f3e1f9fffd4ae4c82c1b07fe085ba26e2a6d332db34dd" "2c88b703cbe7ce802bf6f0bffe3edbb8d9ec68fc7557089d4eaa1e29f7529fe1" default)))
  '(package-selected-packages
    (quote
-    (pdf-tools smex sudo-edit intero material-theme ac-racer flycheck-rust rust-playground ob-prolog cargo racer all-the-icons-ivy all-the-icons-dired all-the-icons-gnus hideshow-org badwolf-theme ghc spaceline-all-the-icons doom-themes color-theme-sanityinc-tomorrow use-package spaceline smartparens rainbow-mode rainbow-delimiters multi-term magit haskell-mode flycheck emojify elpy autothemer auto-complete all-the-icons))))
+    (stack-mode tabbar neotree haskell-mode kooten-theme pdf-tools smex sudo-edit material-theme ac-racer flycheck-rust rust-playground ob-prolog cargo racer all-the-icons-ivy all-the-icons-dired all-the-icons-gnus hideshow-org badwolf-theme spaceline-all-the-icons doom-themes color-theme-sanityinc-tomorrow use-package spaceline smartparens rainbow-mode rainbow-delimiters multi-term magit flycheck emojify elpy autothemer auto-complete all-the-icons))))
 
 ;;; Commentary:
 ;;; Code:
