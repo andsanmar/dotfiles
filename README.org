@@ -36,42 +36,7 @@
 
     I've done my own GTK theme from oomox with my colour theme (sorry for so much css code, it's in this repository)
 
-** Color theme
-
-*** Tomorrow Night theme:
-
-Palette:
-#+NAME:   fig:SED-HR4049
-[[./pic/Tomorrow-Night-Palette.png]]
-
-| #1d1f21 | Background   |
-| #282a2e | Current Line |
-| #373b41 | Selection    |
-| #c5c8c6 | Foreground   |
-| #969896 | Comment      |
-| #cc6666 | Red          |
-| #de935f | Orange       |
-| #f0c674 | Yellow       |
-| #b5bd68 | Green        |
-| #8abeb7 | Aqua         |
-| #81a2be | Blue         |
-| #b294bb | Purple       |
-
-This schema is from: [[https://github.com/chriskempson/tomorrow-theme]]
+** Color Theme:
+[[https://challenger-deep-theme.github.io/][Challenger Deep theme]]
     
 ** Behave and look
-
-*Empty*
-#+NAME:   EMPTY
-#+ATTR_ORG: :width 512
-[[./pic/empty.png]]
-
-*With gaps activated*
-#+NAME:   GAPS
-#+ATTR_ORG: :width 512
-[[./pic/gaps.png]]
-
-*Dual powah*
-#+NAME:   DUAL
-#+ATTR_ORG: :width 1024
-[[./pic/dual.png]]

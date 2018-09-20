@@ -155,18 +155,6 @@
 (global-set-key (kbd "<f5>") 'buffer-menu)
 ;;; init.el ends here
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (doom-tomorrow-night)))
- '(custom-safe-themes
-   (quote
-    ("356e5cbe0874b444263f3e1f9fffd4ae4c82c1b07fe085ba26e2a6d332db34dd" "2c88b703cbe7ce802bf6f0bffe3edbb8d9ec68fc7557089d4eaa1e29f7529fe1" default)))
- '(package-selected-packages
-   (quote
-    (stack-mode tabbar neotree haskell-mode kooten-theme pdf-tools smex sudo-edit material-theme ac-racer flycheck-rust rust-playground ob-prolog cargo racer all-the-icons-ivy all-the-icons-dired all-the-icons-gnus hideshow-org badwolf-theme spaceline-all-the-icons doom-themes color-theme-sanityinc-tomorrow use-package spaceline smartparens rainbow-mode rainbow-delimiters multi-term magit flycheck emojify elpy autothemer auto-complete all-the-icons))))
 
 ;;; Commentary:
 ;;; Code:
@@ -186,4 +174,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:inherit nil :stipple nil :background "#1b182c" :foreground "#cbe3e7" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 122 :width normal :foundry "CYRE" :family "Inconsolata")))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (challenger-deep)))
+ '(custom-safe-themes
+   (quote
+    ("a3fa4abaf08cc169b61dea8f6df1bbe4123ec1d2afeb01c17e11fdc31fc66379" "f71859eae71f7f795e734e6e7d178728525008a28c325913f564a42f74042c31" default)))
+ '(package-selected-packages
+   (quote
+    (select-themes use-package undo-tree tabbar sudo-edit stack-mode spaceline-all-the-icons smex smartparens rust-playground rainbow-mode rainbow-delimiters pdf-tools ob-prolog neotree multiple-cursors multi-term material-theme magit kooten-theme hideshow-org flycheck-rust emojify elpy doom-themes color-theme-sanityinc-tomorrow challenger-deep-theme cargo badwolf-theme autothemer all-the-icons-ivy all-the-icons-gnus all-the-icons-dired ac-racer))))

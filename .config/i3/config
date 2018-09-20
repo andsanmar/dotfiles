@@ -231,7 +231,7 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id "compton -cC"
 exec --no-startup-id nm-applet
-exec --no-startup-id "nitrogen --restore"
+# exec --no-startup-id "nitrogen --restore"
 # exec --no-startup-id "sleep 5s && kalu"
 
 # Brightness
@@ -252,7 +252,7 @@ bindsym $mod+ctrl+m exec thunderbird
 # bindsym $mod+ctrl+x exec shutdown now
 
 # Wallpaper
-exec nitrogen --set-centered ~/.wll/glider.png
+exec feh --bg-fill ~/.wll/haskell.jpg
 
 exec setxkbmap -option ctrl:nocaps
 #for_window [class="^(?i)firefox"] floating enable #border pixel 1
@@ -262,7 +262,7 @@ exec_always ./.config/polybar/launch.sh
 
 # We eliminate the titles (we have them on polybar)
 # default_border none
-default_border pixel 1
+default_border none
 default_floating_border normal
 
 # To activate floating
@@ -286,3 +286,4 @@ bindsym Print exec scrot ~/pic/sh/%b%d::%H%M%S.png
 for_window [class="Thunar"] floating enable
 for_window [class="[.]*"] floating enable
 exec xss-lock -- betterlockscreen -l
+exec compton -b
