@@ -16,7 +16,7 @@
 
 **** Features
      
-     Doom themes: tomorrow night
+     Kaolin bubblegum theme
      Packages: Magit, spaceline, smartparens, hideshow...
      Languages: Haskell, Rust, C, Python...
 
@@ -30,13 +30,11 @@
 
 *** Menu: rofi
 
-    Pretty, it uses the base16-themes -> tomorrow night
+    Pretty, it let you to launch and change applications
 
 *** GTK theme:
 
     I've done my own GTK theme from oomox with my colour theme (sorry for so much css code, it's in this repository)
 
 ** Color Theme:
-[[https://challenger-deep-theme.github.io/][Challenger Deep theme]]
-    
-** Behave and look
+   Kaolin Bubblegum

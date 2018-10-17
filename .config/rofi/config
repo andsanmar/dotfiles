@@ -35,4 +35,4 @@ rofi.font: sans-serif 10
 rofi.kb-row-select "Tab"
 rofi.kb-row-tab ""
 
-#include "/usr/share/rofi/themes/challenger.theme"
+#include "/home/andsanmar/.local/share/rofi/themes/bubblegum.theme"

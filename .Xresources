@@ -53,41 +53,41 @@ URxvt.urgentOnBell: True
 ! Challenger Deep Xresources palette
 
 ! special
-*.foreground:   #cbe3e7
-*.background:   #1b182c
-*.cursorColor:  #fbfcfc
+*.foreground:   #d4d4d6
+*.background:   #14171e
+*.cursorColor:  #f2f2f2
 
 ! black
-*.color0:       #565575
-*.color8:       #100e23
+*.color0:       #333333
+*.color8:       #555555
 
 ! red
-*.color1:       #ff8080
-*.color9:       #ff5458
+*.color1:       #cd5c60
+*.color9:       #ee7042
 
 ! green
-*.color2:       #95ffa4
-*.color10:      #62d196
+*.color2:       #7CF083
+*.color10:      #63E8C1
 
 ! yellow
-*.color3:       #ffe9aa
-*.color11:      #ffb378
+*.color3:       #c7ee53
+*.color11:      #dbac66
 
 ! blue
-*.color4:       #91ddff
-*.color12:      #65b2ff
+*.color4:       #4c7de8
+*.color12:      #3277BA
 
 ! magenta
-*.color5:       #c991e1
-*.color13:      #906cff
+*.color5:       #ef6787
+*.color13:      #c79af4
 
 ! cyan
-*.color6:       #aaffe4
-*.color14:      #63f2f1
+*.color6:       #63E8C1
+*.color14:      #0E9E97
 
 ! white
-*.color7:       #cbe3e7
-*.color15:      #a6b3cc
+*.color7:       #CED8D9
+*.color15:      #545c5e
 
 
 Emacs.font:     Inconsolata-13
