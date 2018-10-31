@@ -18,7 +18,7 @@
      
      Kaolin bubblegum theme
      Packages: Magit, spaceline, smartparens, hideshow...
-     Languages: Haskell, Rust, C, Python...
+     Languages: Haskell, Rust, C, assembly, Python...
 
 *** Terminal: urxvt
 
@@ -30,11 +30,16 @@
 
 *** Menu: rofi
 
-    Pretty, it let you to launch and change applications
-
-*** GTK theme:
-
-    I've done my own GTK theme from oomox with my colour theme (sorry for so much css code, it's in this repository)
+    Pretty, it lets you to launch and change applications
 
 ** Color Theme:
    Kaolin Bubblegum
+
+* Screenshots
+** Normal
+   #+NAME:   fig:Normal
+   [[./pic/normal.png]]
+   
+** Emacs
+   #+NAME:   fig:EMACS
+   [[./pic/emacs.png]]
