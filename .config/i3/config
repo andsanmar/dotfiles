@@ -245,7 +245,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 exec emacs --daemon
 
 # My Programs
-bindsym $mod+ctrl+f exec firefox
+bindsym $mod+ctrl+f exec firefox-developer-edition
 bindsym $mod+ctrl+e exec emacsclient -c
 bindsym $mod+ctrl+a exec thunar
 bindsym $mod+ctrl+v exec urxvt -e cava

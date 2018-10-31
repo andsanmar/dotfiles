@@ -93,3 +93,5 @@ URxvt.urgentOnBell: True
 Emacs.font:     Inconsolata-13
 !Emacs.geometry: 90x60
 Xft.hinting:    1
+URxvt*iso14755: False
+URxvt.iso14755_52: False
