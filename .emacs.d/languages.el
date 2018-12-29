@@ -3,6 +3,9 @@
 (elpy-enable)
 ;; Haskell
 (require 'haskell-mode)
+(require 'haskell-process)
+(require 'haskell-interactive-mode)
+(require 'haskell-completions)
 (require 'ciao)
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . ciao-mode))
 (require 'rust-mode)

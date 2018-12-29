@@ -1,8 +1,8 @@
 (require 'multi-eshell)
 (require 'smartparens)
 (smartparens-global-mode t)
-;; (require 'auto-complete)
-;; (ac-config-default)
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 (require' flycheck)
 (global-flycheck-mode)
 ;; Magit
@@ -49,3 +49,4 @@
 (global-set-key (kbd "C-c C-v") 'undo-tree-visualize)
 (global-set-key (kbd "<f2>") 'undo-tree-visualize)
 (global-set-key (kbd "<f5>") 'bs-show)
+(global-set-key (kbd "C-<tab>") 'company-dabbrev)
