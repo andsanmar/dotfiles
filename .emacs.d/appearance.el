@@ -24,4 +24,8 @@
 ;; ;; Golden Ratio
 ;; (require 'golden-ratio)
 ;; (golden-ratio-mode 1)
+(setq doc-view-resolution 512)
 
+(require 'hasklig-mode)
+(add-hook 'haskell-mode-hook #'hasklig-mode)
+(add-hook 'coq-mode-hook #'hasklig-mode)

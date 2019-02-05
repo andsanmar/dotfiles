@@ -1,4 +1,4 @@
-(require 'multi-eshell)
+(require 'multi-term)
 (require 'smartparens)
 (smartparens-global-mode t)
 (require 'company)
@@ -50,3 +50,4 @@
 (global-set-key (kbd "<f2>") 'undo-tree-visualize)
 (global-set-key (kbd "<f5>") 'bs-show)
 (global-set-key (kbd "C-<tab>") 'company-dabbrev)
+

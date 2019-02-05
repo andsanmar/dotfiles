@@ -90,7 +90,7 @@ URxvt.urgentOnBell: True
 ! *.color15:      #545c5e
 
 
-Emacs.font:     Inconsolata-13
+Emacs.font:     Hack-11
 !Emacs.geometry: 90x60
 Xft.hinting:    1
 URxvt*iso14755: False
