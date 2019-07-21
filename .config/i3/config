@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $term WINIT_HIDPI_FACTOR=1.0 alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -29,9 +30,7 @@ hide_edge_borders both
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
-#bindsym $mod+Return exec termite
-# bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -218,8 +217,9 @@ bindsym $mod+F8 exec mocp --next
 
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/i3-dmenu-desktop"
-bindsym $mod+space exec rofi -show drun -show-icons
-bindsym $mod+Tab exec rofi -show window -show-icons
+bindsym $mod+s exec WINIT_HIDPI_FACTOR=1.0 rofi -show ssh
+bindsym $mod+space exec WINIT_HIDPI_FACTOR=1.0 rofi -show drun -show-icons
+bindsym $mod+Tab exec WINIT_HIDPI_FACTOR=1.0 rofi -show window -show-icons
 bindsym $mod+Shift+Tab exec rofi -show combi -show-icons
 
 
@@ -243,25 +243,28 @@ exec emacs --daemon
 # My Programs
 bindsym $mod+ctrl+f exec firefox-developer-edition
 bindsym $mod+ctrl+e exec emacsclient -c
-bindsym $mod+ctrl+a exec thunar
-bindsym $mod+ctrl+v exec urxvt -e cava
+bindsym $mod+ctrl+r exec $term -e emacsclient -nw
+bindsym $mod+ctrl+a exec WINIT_HIDPI_FACTOR=1.0 thunar
+bindsym $mod+ctrl+v exec $term -e cava
+bindsym $mod+ctrl+h exec $term -e htop
 bindsym $mod+ctrl+t exec ~/.tlg
 bindsym $mod+ctrl+m exec thunderbird
 
 # bindsym $mod+ctrl+x exec shutdown now
 
 # Wallpaper
-exec feh --bg-fill ~/multimedia/images/Wallpapers/penrose.png
+exec feh --bg-fill ~/multimedia/images/Wallpapers/neon_penrose.png
 
 exec setxkbmap -option ctrl:nocaps
 #for_window [class="^(?i)firefox"] floating enable #border pixel 1
 
 # Polybar
 exec_always ./.config/polybar/launch.sh
+bindsym $mod+Shift+p exec ~/.config/polybar/launch.sh
 
 # We eliminate the titles (we have them on polybar)
 # default_border none
-default_border none
+default_border pixel 1
 default_floating_border normal
 
 # To activate floating

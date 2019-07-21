@@ -1,3 +1,4 @@
+(savehist-mode 1)
 (require 'multi-term)
 (require 'smartparens)
 (smartparens-global-mode t)
@@ -16,6 +17,7 @@
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-x C-z") 'undo)
 (global-set-key (kbd "C-S-z") 'redo)
+(global-set-key (kbd "C-M-z") 'redo)
 (require 'ox-reveal)
 ;; Search improved
 (setq completion-ignore-case  t)
@@ -51,3 +53,4 @@
 (global-set-key (kbd "<f5>") 'bs-show)
 (global-set-key (kbd "C-<tab>") 'company-dabbrev)
 
+(require 'vterm)

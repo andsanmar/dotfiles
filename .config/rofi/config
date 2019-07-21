@@ -35,4 +35,7 @@ rofi.font: sans-serif 10
 rofi.kb-row-select "Tab"
 rofi.kb-row-tab ""
 
+! Terminal to use
+rofi.terminal: alacritty
+
 #include "/home/andsanmar/.local/share/rofi/themes/bubblegum.theme"

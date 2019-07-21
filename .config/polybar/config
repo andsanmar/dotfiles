@@ -12,7 +12,7 @@ alert = #ff5458
 [bar/base]
   monitor = ${env:MONITOR:}
   width = 100%
-  height = 20
+  height = 18
   ;radius = 6.0
   fixed-center = false
 
@@ -33,13 +33,13 @@ alert = #ff5458
   module-margin-left = 2
   module-margin-right = 1
 
-  font-0 = fixed:pixelsize=9;1
-  font-1 = MaterialIcons:size=9;1
-  font-2 = FontAwesome:size=9:antialias=true;3
-  font-3 = fixed:pixelsize=9:weight=bold;1:
+  font-0 = fixed:pixelsize=11;1
+  font-1 = MaterialIcons:size=11;1
+  font-2 = FontAwesome:size=11:antialias=true;3
+  font-3 = fixed:pixelsize=11:weight=bold;1:
 
   modules-left = i3 xwindow
-  modules-right = music volume backlight battery date powermenu network
+  modules-right = music volume backlight battery date powermenu 
 
   tray-position = right
   tray-padding = 2
@@ -227,7 +227,6 @@ menu-4-0 = ""
 menu-4-0-exec = systemctl suspend -i
 menu-5-0 = ""
 menu-5-0-exec = i3-msg exit
-
 
 [settings]
 screenchange-reload = true
