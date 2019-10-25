@@ -1,0 +1,207 @@
+[submodule ".emacs.d/site-lisp/lsp-mode"]
+	path = .emacs.d/site-lisp/lsp-mode
+	url = https://github.com/emacs-lsp/lsp-mode
+[submodule ".emacs.d/site-lisp/alert"]
+	path = .emacs.d/site-lisp/alert
+	url = https://github.com/jwiegley/alert
+[submodule ".emacs.d/site-lisp/all-the-icons.el"]
+	path = .emacs.d/site-lisp/all-the-icons.el
+	url = https://github.com/domtronn/all-the-icons.el
+[submodule ".emacs.d/site-lisp/dotfiles"]
+	path = .emacs.d/site-lisp/dotfiles
+	url = https://github.com/andsanmar/dotfiles.git
+[submodule ".emacs.d/site-lisp/autothemer"]
+	path = .emacs.d/site-lisp/autothemer
+	url = https://github.com/jasonm23/autothemer.git
+[submodule ".emacs.d/site-lisp/cargo.el"]
+	path = .emacs.d/site-lisp/cargo.el
+	url = https://github.com/kwrooijen/cargo.el
+[submodule ".emacs.d/site-lisp/company-coq"]
+	path = .emacs.d/site-lisp/company-coq
+	url = https://github.com/cpitclaudel/company-coq
+[submodule ".emacs.d/site-lisp/company-lsp"]
+	path = .emacs.d/site-lisp/company-lsp
+	url = https://github.com/tigersoldier/company-lsp
+[submodule ".emacs.d/site-lisp/company-math"]
+	path = .emacs.d/site-lisp/company-math
+	url = https://github.com/vspinu/company-math
+[submodule ".emacs.d/site-lisp/company-mode"]
+	path = .emacs.d/site-lisp/company-mode
+	url = https://github.com/company-mode/company-mode/
+[submodule ".emacs.d/site-lisp/company-quickhelp"]
+	path = .emacs.d/site-lisp/company-quickhelp
+	url = https://github.com/expez/company-quickhelp
+[submodule ".emacs.d/site-lisp/company-racer"]
+	path = .emacs.d/site-lisp/company-racer
+	url = https://github.com/emacs-pe/company-racer
+[submodule ".emacs.d/site-lisp/dash.el"]
+	path = .emacs.d/site-lisp/dash.el
+	url = https://github.com/magnars/dash.el
+[submodule ".emacs.d/site-lisp/doom-modeline"]
+	path = .emacs.d/site-lisp/doom-modeline
+	url = https://github.com/seagle0128/doom-modeline
+[submodule ".emacs.d/site-lisp/elpy"]
+	path = .emacs.d/site-lisp/elpy
+	url = https://github.com/jorgenschaefer/elpy
+[submodule ".emacs.d/site-lisp/emacs-doom-themes"]
+	path = .emacs.d/site-lisp/emacs-doom-themes
+	url = https://github.com/hlissner/emacs-doom-themes
+[submodule ".emacs.d/site-lisp/emacs-hide-mode-line"]
+	path = .emacs.d/site-lisp/emacs-hide-mode-line
+	url = https://github.com/hlissner/emacs-hide-mode-line
+[submodule ".emacs.d/site-lisp/emacs-htmlize"]
+	path = .emacs.d/site-lisp/emacs-htmlize
+	url = https://github.com/hniksic/emacs-htmlize
+[submodule ".emacs.d/site-lisp/emacs-kaolin-themes"]
+	path = .emacs.d/site-lisp/emacs-kaolin-themes
+	url = https://github.com/ogdenwebb/emacs-kaolin-themes.git
+[submodule ".emacs.d/site-lisp/emacs-libvterm"]
+	path = .emacs.d/site-lisp/emacs-libvterm
+	url = https://github.com/akermu/emacs-libvterm
+[submodule ".emacs.d/site-lisp/emacs-memoize"]
+	path = .emacs.d/site-lisp/emacs-memoize
+	url = https://github.com/skeeto/emacs-memoize.git
+[submodule ".emacs.d/site-lisp/emacs-racer"]
+	path = .emacs.d/site-lisp/emacs-racer
+	url = https://github.com/racer-rust/emacs-racer
+[submodule ".emacs.d/site-lisp/emacs-sbt-mode"]
+	path = .emacs.d/site-lisp/emacs-sbt-mode
+	url = https://github.com/ensime/emacs-sbt-mode
+[submodule ".emacs.d/site-lisp/emacs-scala-mode"]
+	path = .emacs.d/site-lisp/emacs-scala-mode
+	url = https://github.com/ensime/emacs-scala-mode
+[submodule ".emacs.d/site-lisp/fixme-mode"]
+	path = .emacs.d/site-lisp/fixme-mode
+	url = https://github.com/nflath/fixme-mode.git
+[submodule ".emacs.d/site-lisp/flycheck"]
+	path = .emacs.d/site-lisp/flycheck
+	url = https://github.com/flycheck/flycheck
+[submodule ".emacs.d/site-lisp/flycheck-rust"]
+	path = .emacs.d/site-lisp/flycheck-rust
+	url = https://github.com/flycheck/flycheck-rust
+[submodule ".emacs.d/site-lisp/flymake-easy"]
+	path = .emacs.d/site-lisp/flymake-easy
+	url = https://github.com/purcell/flymake-easy
+[submodule ".emacs.d/site-lisp/flymake-jslint"]
+	path = .emacs.d/site-lisp/flymake-jslint
+	url = https://github.com/purcell/flymake-jslint
+[submodule ".emacs.d/site-lisp/flymake-rust"]
+	path = .emacs.d/site-lisp/flymake-rust
+	url = https://github.com/jxs/flymake-rust
+[submodule ".emacs.d/site-lisp/fstar-mode.el"]
+	path = .emacs.d/site-lisp/fstar-mode.el
+	url = https://github.com/FStarLang/fstar-mode.el
+[submodule ".emacs.d/site-lisp/go-mode.el"]
+	path = .emacs.d/site-lisp/go-mode.el
+	url = https://github.com/dominikh/go-mode.el
+[submodule ".emacs.d/site-lisp/haskell-mode"]
+	path = .emacs.d/site-lisp/haskell-mode
+	url = https://github.com/haskell/haskell-mode.git
+[submodule ".emacs.d/site-lisp/hasklig-mode"]
+	path = .emacs.d/site-lisp/hasklig-mode
+	url = https://github.com/minad/hasklig-mode
+[submodule ".emacs.d/site-lisp/ht.el"]
+	path = .emacs.d/site-lisp/ht.el
+	url = https://github.com/Wilfred/ht.el
+[submodule ".emacs.d/site-lisp/hydra"]
+	path = .emacs.d/site-lisp/hydra
+	url = https://github.com/abo-abo/hydra
+[submodule ".emacs.d/site-lisp/js2-mode"]
+	path = .emacs.d/site-lisp/js2-mode
+	url = https://github.com/mooz/js2-mode/
+[submodule ".emacs.d/site-lisp/json-mode"]
+	path = .emacs.d/site-lisp/json-mode
+	url = https://github.com/joshwnj/json-mode
+[submodule ".emacs.d/site-lisp/json-reformat"]
+	path = .emacs.d/site-lisp/json-reformat
+	url = https://github.com/gongo/json-reformat
+[submodule ".emacs.d/site-lisp/json-snatcher"]
+	path = .emacs.d/site-lisp/json-snatcher
+	url = https://github.com/Sterlingg/json-snatcher
+[submodule ".emacs.d/site-lisp/liquid-tip.el"]
+	path = .emacs.d/site-lisp/liquid-tip.el
+	url = https://github.com/themattchan/liquid-tip.el.git
+[submodule ".emacs.d/site-lisp/lsp-latex"]
+	path = .emacs.d/site-lisp/lsp-latex
+	url = https://github.com/ROCKTAKEY/lsp-latex
+[submodule ".emacs.d/site-lisp/lsp-ui"]
+	path = .emacs.d/site-lisp/lsp-ui
+	url = https://github.com/emacs-lsp/lsp-ui
+[submodule ".emacs.d/site-lisp/magit"]
+	path = .emacs.d/site-lisp/magit
+	url = https://github.com/magit/magit
+[submodule ".emacs.d/site-lisp/magit-popup"]
+	path = .emacs.d/site-lisp/magit-popup
+	url = https://github.com/magit/magit-popup
+[submodule ".emacs.d/site-lisp/markdown-mode"]
+	path = .emacs.d/site-lisp/markdown-mode
+	url = https://github.com/jrblevin/markdown-mode.git
+[submodule ".emacs.d/site-lisp/math-symbol-lists"]
+	path = .emacs.d/site-lisp/math-symbol-lists
+	url = https://github.com/vspinu/math-symbol-lists
+[submodule ".emacs.d/site-lisp/org-pomodoro"]
+	path = .emacs.d/site-lisp/org-pomodoro
+	url = https://github.com/lolownia/org-pomodoro
+[submodule ".emacs.d/site-lisp/org-reveal"]
+	path = .emacs.d/site-lisp/org-reveal
+	url = https://github.com/yjwen/org-reveal
+[submodule ".emacs.d/site-lisp/org-sidebar"]
+	path = .emacs.d/site-lisp/org-sidebar
+	url = https://github.com/alphapapa/org-sidebar
+[submodule ".emacs.d/site-lisp/PG"]
+	path = .emacs.d/site-lisp/PG
+	url = https://github.com/ProofGeneral/PG
+[submodule ".emacs.d/site-lisp/pomidor"]
+	path = .emacs.d/site-lisp/pomidor
+	url = https://github.com/TatriX/pomidor/
+[submodule ".emacs.d/site-lisp/powerline"]
+	path = .emacs.d/site-lisp/powerline
+	url = https://github.com/milkypostman/powerline
+[submodule ".emacs.d/site-lisp/quick-peek"]
+	path = .emacs.d/site-lisp/quick-peek
+	url = https://github.com/cpitclaudel/quick-peek
+[submodule ".emacs.d/site-lisp/rainbow-delimiters"]
+	path = .emacs.d/site-lisp/rainbow-delimiters
+	url = https://github.com/Fanael/rainbow-delimiters.git
+[submodule ".emacs.d/site-lisp/rainbow-mode"]
+	path = .emacs.d/site-lisp/rainbow-mode
+	url = https://github.com/emacsmirror/rainbow-mode.git
+[submodule ".emacs.d/site-lisp/rust-mode"]
+	path = .emacs.d/site-lisp/rust-mode
+	url = https://github.com/rust-lang/rust-mode
+[submodule ".emacs.d/site-lisp/shrink-path.el"]
+	path = .emacs.d/site-lisp/shrink-path.el
+	url = https://gitlab.com/bennya/shrink-path.el
+[submodule ".emacs.d/site-lisp/smartparens"]
+	path = .emacs.d/site-lisp/smartparens
+	url = https://github.com/Fuco1/smartparens
+[submodule ".emacs.d/site-lisp/smex"]
+	path = .emacs.d/site-lisp/smex
+	url = https://github.com/nonsequitur/smex.git
+[submodule ".emacs.d/site-lisp/spaceline"]
+	path = .emacs.d/site-lisp/spaceline
+	url = https://github.com/TheBB/spaceline
+[submodule ".emacs.d/site-lisp/spaceline-all-the-icons.el"]
+	path = .emacs.d/site-lisp/spaceline-all-the-icons.el
+	url = https://github.com/domtronn/spaceline-all-the-icons.el/
+[submodule ".emacs.d/site-lisp/spinner.el"]
+	path = .emacs.d/site-lisp/spinner.el
+	url = https://github.com/Malabarba/spinner.el
+[submodule ".emacs.d/site-lisp/transient"]
+	path = .emacs.d/site-lisp/transient
+	url = https://github.com/magit/transient
+[submodule ".emacs.d/site-lisp/undo-tree"]
+	path = .emacs.d/site-lisp/undo-tree
+	url = https://github.com/martinp26/undo-tree.git
+[submodule ".emacs.d/site-lisp/use-package"]
+	path = .emacs.d/site-lisp/use-package
+	url = https://github.com/jwiegley/use-package
+[submodule ".emacs.d/site-lisp/vlfi"]
+	path = .emacs.d/site-lisp/vlfi
+	url = https://github.com/m00natic/vlfi
+[submodule ".emacs.d/site-lisp/with-editor"]
+	path = .emacs.d/site-lisp/with-editor
+	url = https://github.com/magit/with-editor
+[submodule ".emacs.d/site-lisp/yaml-mode"]
+	path = .emacs.d/site-lisp/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode
