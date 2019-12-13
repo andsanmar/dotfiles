@@ -205,3 +205,30 @@
 [submodule ".emacs.d/site-lisp/yaml-mode"]
 	path = .emacs.d/site-lisp/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode
+[submodule ".emacs.d/site-lisp/ghub"]
+	path = .emacs.d/site-lisp/ghub
+	url = https://github.com/magit/ghub
+[submodule ".emacs.d/site-lisp/emacs-async"]
+	path = .emacs.d/site-lisp/emacs-async
+	url = https://github.com/jwiegley/emacs-async
+[submodule ".emacs.d/site-lisp/emacs-neotree"]
+	path = .emacs.d/site-lisp/emacs-neotree
+	url = https://github.com/jaypei/emacs-neotree
+[submodule ".emacs.d/site-lisp/Emacs-wgrep"]
+	path = .emacs.d/site-lisp/Emacs-wgrep
+	url = https://github.com/mhayashi1120/Emacs-wgrep
+[submodule ".emacs.d/site-lisp/epl"]
+	path = .emacs.d/site-lisp/epl
+	url = https://github.com/cask/epl
+[submodule ".emacs.d/site-lisp/f.el"]
+	path = .emacs.d/site-lisp/f.el
+	url = https://github.com/rejeep/f.el
+[submodule ".emacs.d/site-lisp/libegit2"]
+	path = .emacs.d/site-lisp/libegit2
+	url = https://github.com/magit/libegit2
+[submodule ".emacs.d/site-lisp/org-mode"]
+	path = .emacs.d/site-lisp/org-mode
+	url = https://github.com/abo-abo/org-mode
+[submodule ".emacs.d/site-lisp/swiper"]
+	path = .emacs.d/site-lisp/swiper
+	url = https://github.com/abo-abo/swiper
