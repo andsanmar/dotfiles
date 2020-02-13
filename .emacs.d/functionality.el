@@ -1,15 +1,8 @@
 (savehist-mode 1)
-(require 'multi-term)
-(require 'smartparens)
-(smartparens-global-mode t)
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-(require' flycheck)
-(global-flycheck-mode)
-;; Magit
-(require' magit)
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+(setq history-length 100000)
+
+(setq-default fill-column 80)
+
 ;; Undo
 (require 'undo-tree)
 (defalias 'redo 'undo-tree-redo)
@@ -31,6 +24,23 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+
+(require 'smartparens)
+(smartparens-global-mode t)
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(require' flycheck)
+(global-flycheck-mode)
+;; Magit
+(require' magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/.emacs.d/site-lisp/magit/Documentation/"))
+
 ;; Clean buffers
 (defun kill-buffers()
   "Kill all buffers."
@@ -53,4 +63,7 @@
 (global-set-key (kbd "<f5>") 'bs-show)
 (global-set-key (kbd "C-<tab>") 'company-dabbrev)
 
-(require 'vterm)
+;; (require 'vterm)
+(require 'vlf-setup)
+(setq auto-save-list-file-prefix nil)
+(setq auto-save-list-file-name nil)

@@ -36,6 +36,7 @@
 (setq find-file-visit-truename t)
 (setq doom-modeline-vcs-max-length 20)
 (setq doom-modeline-icon t)
+(setq doom-modeline-height 20)
 
 
 ;; ;; Golden Ratio
@@ -44,6 +45,8 @@
 (setq doc-view-resolution 512)
 (blink-cursor-mode -1)
 
-(require 'hasklig-mode)
-(add-hook 'haskell-mode-hook #'hasklig-mode)
-(add-hook 'coq-mode-hook #'hasklig-mode)
+;; (require 'hasklig-mode)
+;; (add-hook 'haskell-mode-hook #'hasklig-mode)
+;; (add-hook 'coq-mode-hook #'hasklig-mode)
+
+(require 'hide-mode-line)
