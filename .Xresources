@@ -1,99 +1,106 @@
-!==========
-! Urxvt
-!==========
+! !==========
+! ! Urxvt
+! !==========
 
-! mark-yank-urls bindings (see http://www.jukie.net/~bart/blog/urxvt-url-yank)
-!==========
-! Alt-u: Enter yank mode
-! Esc: Exit yank mode
-! y: copy to clipboard
-! Enter: Launch Browser
-! Ctrl-n: select next url
-! Ctrl-p: select previous url
-!==========
+! ! mark-yank-urls bindings (see http://www.jukie.net/~bart/blog/urxvt-url-yank)
+! !==========
+! ! Alt-u: Enter yank mode
+! ! Esc: Exit yank mode
+! ! y: copy to clipboard
+! ! Enter: Launch Browser
+! ! Ctrl-n: select next url
+! ! Ctrl-p: select previous url
+! !==========
 
-URxvt.perl-lib:         /home/andsanmar/.urxvt/
-URxvt.perl-ext:         option-popup,matcher,selection,mark-yank-urls
-URxvt.perl-ext-common:	font-size
-URxvt.urlLauncher:      /usr/bin/firefox
-URxvt.underlineURLs:    true
-URxvt.keysym.M-u:       perl:mark-yank-urls:activate_mark_mode
+! URxvt.perl-lib:         /home/andsanmar/.urxvt/
+! URxvt.perl-ext:         option-popup,matcher,selection,mark-yank-urls
+! URxvt.perl-ext-common:	font-size
+! URxvt.urlLauncher:      /usr/bin/firefox
+! URxvt.underlineURLs:    true
+! URxvt.keysym.M-u:       perl:mark-yank-urls:activate_mark_mode
 
-URxvt.cutchars:         `"()'*<>[]{|}"
+! URxvt.cutchars:         `"()'*<>[]{|}"
  
-URxvt.geometry:         100x45
-URxvt.borderLess:       false
-URxvt.transparent:      false
-!URxvt.shading:          20
-URxvt.depth:            32
-!URxvt.background:       #202020
-URxvt.foreground:       white
+! URxvt.geometry:         100x45
+! URxvt.borderLess:       false
+! URxvt.transparent:      false
+! !URxvt.shading:          20
+! URxvt.depth:            32
+! !URxvt.background:       #202020
+! URxvt.foreground:       white
 
-URxvt.saveLines:        10000
-URxvt.xftAntialias:     true
-URxvt.font:             xft:inconsolata:pixelsize=15:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
-URxvt.boldFont:         xft:inconsolata:pixelsize=15:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
-URxvt.italicFont:       xft:inconsolata:pixelsize=15:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
-URxvt.bolditalicFont:   xft:inconsolata:pixelsize=15:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+! URxvt.saveLines:        10000
+! URxvt.xftAntialias:     true
+! URxvt.font:             xft:inconsolata:pixelsize=15:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,xft:Noto Emoji,hinting=true
+! URxvt.boldFont:         xft:inconsolata:pixelsize=15:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,xft:Noto Emoji,hinting=true
+! URxvt.italicFont:       xft:inconsolata:pixelsize=15:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,xft:Noto Emoji,hinting=true
+! URxvt.bolditalicFont:   xft:inconsolata:pixelsize=15:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,xft:Noto Emoji,hinting=true
 
-URxvt.internalBorder:   0
-!URxvt.underlineColor:	#999999
-URxvt.cursorBlink:      true
-!URxvt.cursorColor:      #EEEEEE
-!URxvt.cursorColor2:     #000000
+! URxvt.internalBorder:   0
+! !URxvt.underlineColor:	#999999
+! URxvt.cursorBlink:      true
+! !URxvt.cursorColor:      #EEEEEE
+! !URxvt.cursorColor2:     #000000
 
-URxvt.scrollBar:        False
-URxvt.scrollBar_right:  False
+! URxvt.scrollBar:        False
+! URxvt.scrollBar_right:  False
  
-URxvt.scrollTtyOutput:  False
-URxvt.scrollWithBuffer: True
-URxvt.scrollTtyKeypress: True
-URxvt.urgentOnBell: True
+! URxvt.scrollTtyOutput:  False
+! URxvt.scrollWithBuffer: True
+! URxvt.scrollTtyKeypress: True
+! URxvt.urgentOnBell: True
 
-! Challenger Deep Xresources palette
+! ! Challenger Deep Xresources palette
 
-! special
-*.foreground:   #fff
-*.background:   #000
-! *.cursorColor:  #f2f2f2
+! ! special
+! *.foreground:   #fff
+! *.background:   #000
+! ! *.cursorColor:  #f2f2f2
 
-! ! black
-! *.color0:       #333333
-! *.color8:       #555555
+! ! ! black
+! ! *.color0:       #333333
+! ! *.color8:       #555555
 
-! ! red
-! *.color1:       #cd5c60
-! *.color9:       #ee7042
+! ! ! red
+! ! *.color1:       #cd5c60
+! ! *.color9:       #ee7042
 
-! ! green
-! *.color2:       #7CF083
-! *.color10:      #63E8C1
+! ! ! green
+! ! *.color2:       #7CF083
+! ! *.color10:      #63E8C1
 
-! ! yellow
-! *.color3:       #c7ee53
-! *.color11:      #dbac66
+! ! ! yellow
+! ! *.color3:       #c7ee53
+! ! *.color11:      #dbac66
 
-! ! blue
-*.color4:       #4c7de8
-*.color12:      #3277BA
+! ! ! blue
+! *.color4:       #4c7de8
+! *.color12:      #3277BA
 
-! ! magenta
-! *.color5:       #ef6787
-! *.color13:      #c79af4
+! ! ! magenta
+! ! *.color5:       #ef6787
+! ! *.color13:      #c79af4
 
-! ! cyan
-! *.color6:       #63E8C1
-! *.color14:      #0E9E97
+! ! ! cyan
+! ! *.color6:       #63E8C1
+! ! *.color14:      #0E9E97
 
-! ! white
-! *.color7:       #CED8D9
-! *.color15:      #545c5e
+! ! ! white
+! ! *.color7:       #CED8D9
+! ! *.color15:      #545c5e
 
 
-! Emacs.font:     Hack-11
-!Emacs.geometry: 90x60
-Xft.hinting:    1
-URxvt*iso14755: False
-URxvt.iso14755_52: False
+! ! Emacs.font:     Hack-11
+! !Emacs.geometry: 90x60
+! Xft.hinting:    1
+! URxvt*iso14755: False
+! URxvt.iso14755_52: False
 Xcursor.theme: adwaita
 Xcursor.size: 16
+
+
+rofi.terminal: termite
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+rofi.run-command: {cmd}
+rofi.run-shell-command: {terminal} -e {cmd}

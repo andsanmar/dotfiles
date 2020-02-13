@@ -6,6 +6,8 @@
 ! By Richard Rabe
 !
 
+rofi.modi: drun,ssh.
+
 ! Location
 ! 1   2   3
 ! 8   0   4
@@ -36,6 +38,10 @@ rofi.kb-row-select "Tab"
 rofi.kb-row-tab ""
 
 ! Terminal to use
-rofi.terminal: alacritty
+rofi.terminal: termite
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e {ssh-client} {host}
+rofi.run-command: {cmd}
+rofi.run-shell-command: {ŧerminal} -e {cmd}
 
 #include "/home/andsanmar/.local/share/rofi/themes/bubblegum.theme"

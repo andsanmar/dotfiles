@@ -10,7 +10,14 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term WINIT_HIDPI_FACTOR=1.0 alacritty
+# set $term WINIT_HIDPI_FACTOR=1.0 alacritty
+set $term termite
+#XSECURELOCK_SAVER=saver_xscreensaver
+# XSECURELOCK_PASSWORD_PROMPT=time_hex XSECURELOCK_WAIT_TIME_MS=3
+set $lock xsecurelock
+# betterlockscreen -l
+
+set $rofioptions -no-lazy-grab -theme themes/appsmenu.rasi
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -42,29 +49,11 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+i focus up
-bindsym $mod+n focus right
+# GNU keybinndings
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+o move up
-bindsym $mod+Shift+n move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# Move between workspaces
+bindsym $mod+less workspace next
+bindsym $mod+Shift+less workspace prev
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -83,14 +72,19 @@ bindsym $mod+Shift+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# Move with keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Focus with keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 bindsym $mod+x focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -127,7 +121,7 @@ bindsym $mod+Shift+r restart
 
 # lock
 # bindsym $mod+Shift+x exec i3lock --color 475263
-bindsym $mod+l exec betterlockscreen -l
+bindsym $mod+l exec $lock
 bindsym $mod+ctrl+l exec systemctl suspend
 
 # resize window (you can also use the mouse for that)
@@ -141,7 +135,7 @@ mode "resize" {
         bindsym j resize shrink width 10 px or 2 ppt
         bindsym k resize grow height 10 px or 2 ppt
         bindsym l resize shrink height 10 px or 2 ppt
-        bindsym ntilde resize grow width 10 px or 2 ppt
+        bindsym n resize grow width 10 px or 2 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 2 ppt
@@ -152,9 +146,78 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+
+	bindsym $mod+m mode "move"
+	bindsym $mod+p mode "focus"
 }
 
 bindsym $mod+r mode "resize"
+
+# move window (you can also use the mouse for that)
+mode "move" {
+        # These bindings trigger as soon as you enter the move mode
+
+	# move focused window
+	bindsym b move left # TODO correct
+	bindsym n move down
+	bindsym p move up
+	bindsym f move right
+
+	# alternatively, you can use the cursor keys:
+	bindsym Left move left
+	bindsym Down move down
+	bindsym Up move up
+	bindsym Right move right
+
+	# change container layout (stacked, tabbed, toggle split)
+	bindsym s layout stacking
+	bindsym w layout tabbed
+	bindsym e layout toggle split
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+
+	bindsym $mod+r mode "resize"
+	bindsym $mod+p mode "focus"
+}
+
+bindsym $mod+m mode "move"
+
+# focus window (you can also use the mouse for that)
+mode "focus" {
+        # These bindings trigger as soon as you enter the focus mode
+
+	# change focus
+	bindsym b focus left
+	bindsym n focus down
+	bindsym p focus up
+	bindsym f focus right
+
+	# alternatively, you can use the cursor keys:
+	bindsym Left focus left
+	bindsym Down focus down
+	bindsym Up focus up
+	bindsym Right focus right
+
+	# change focus between tiling / floating windows
+	bindsym x focus mode_toggle
+
+	# focus the parent container
+	bindsym less focus parent
+
+	# focus the child container
+	bindsym Shift+less focus child
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+
+	bindsym $mod+r mode "resize"
+	bindsym $mod+m mode "move"
+}
+
+bindsym $mod+p mode "focus"
 
 set $bg-color            #545c5e
 set $inactive-bg-color   #34373e
@@ -217,21 +280,20 @@ bindsym $mod+F8 exec mocp --next
 
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/i3-dmenu-desktop"
-bindsym $mod+s exec WINIT_HIDPI_FACTOR=1.0 rofi -show ssh
-bindsym $mod+space exec WINIT_HIDPI_FACTOR=1.0 rofi -show drun -show-icons
-bindsym $mod+Tab exec WINIT_HIDPI_FACTOR=1.0 rofi -show window -show-icons
-bindsym $mod+Shift+Tab exec rofi -show combi -show-icons
-
+bindsym $mod+s exec rofi -theme themes/appsmenu.rasi -show ssh # TODO change theme # rofi -show ssh -width 35
+bindsym $mod+space exec rofi $rofioptions -show drun
+bindsym $mod+Tab exec rofi $rofioptions -show window
+bindsym $mod+Shift+Tab exec rofi $rofioptions -show combi
 
 # Redirect sound to headphones
-bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
+# bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
 # Autostart apps
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id "compton -cC"
-exec --no-startup-id nm-applet
 # exec --no-startup-id "nitrogen --restore"
 # exec --no-startup-id "sleep 5s && kalu"
+exec --no-startup-id nm-applet
 
 # Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -243,23 +305,21 @@ exec emacs --daemon
 # My Programs
 bindsym $mod+ctrl+f exec firefox-developer-edition
 bindsym $mod+ctrl+e exec emacsclient -c
-bindsym $mod+ctrl+r exec $term -e emacsclient -nw
-bindsym $mod+ctrl+a exec WINIT_HIDPI_FACTOR=1.0 thunar
-bindsym $mod+ctrl+v exec $term -e cava
-bindsym $mod+ctrl+h exec $term -e htop
+bindsym $mod+ctrl+r exec $term -e "emacsclient -nw"
+bindsym $mod+ctrl+a exec thunar
+bindsym $mod+ctrl+v exec $term -e "cava"
+bindsym $mod+ctrl+h exec $term -e "htop"
 bindsym $mod+ctrl+t exec ~/.tlg
 bindsym $mod+ctrl+m exec thunderbird
 
-# bindsym $mod+ctrl+x exec shutdown now
-
 # Wallpaper
-exec feh --bg-fill ~/multimedia/images/Wallpapers/neon_penrose.png
+exec feh --bg-fill ~/multimedia/images/Wallpapers/penrose.png
 
 exec setxkbmap -option ctrl:nocaps
 #for_window [class="^(?i)firefox"] floating enable #border pixel 1
 
 # Polybar
-exec_always ./.config/polybar/launch.sh
+exec ~/.config/polybar/launch.sh
 bindsym $mod+Shift+p exec ~/.config/polybar/launch.sh
 
 # We eliminate the titles (we have them on polybar)
@@ -268,24 +328,25 @@ default_border pixel 1
 default_floating_border normal
 
 # To activate floating
-# for_window [class="[.]*"] floating enable
+for_window [class="[.]*"] floating enable
 
 # Gaps
 bindsym $mod+plus  gaps inner current plus 5
 bindsym $mod+minus gaps inner current minus 5
-bindsym $mod+p     gaps inner current set 15; exec nitrogen --set-scaled ~/.wll/mountain.jpg
-bindsym $mod+o     gaps inner current set 0; exec nitrogen --set-centered ~/.wll/glider.png
 
+# Toggle border mode
 bindsym $mod+y border toggle
 
 # Touchpad enable/disable (my touchpad is xinput n 11)
 bindsym $mod+d exec xinput --disable 11
 bindsym $mod+e exec xinput --enable 11
-# To change polybar
-#bindsym $mod+F2 exec ./.config/polybar/launch.sh
+
 # To do screen captures use scrot
-bindsym Print exec scrot ~/pic/sh/%b%d::%H%M%S.png
-# for_window [class="Thunar"] floating enable
-for_window [class="[.]*"] floating enable
-exec xss-lock -- betterlockscreen -l
-# exec compton -b
+bindsym Print exec scrot ~/pic/sh/%b%d::%H%M%S.png # TODO fix
+
+exec xss-lock -- $lock
+exec amixer -c PCH cset 'name=Headphone Mic Boost Volume' 1 # To reduce noise on JACK
+# exec picom -b
+
+for_window [class="Thunar"] resize set 1080px 720px
+for_window [class="Thunar"] move position center

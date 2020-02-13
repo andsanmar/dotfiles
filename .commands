@@ -1,0 +1,29 @@
+# For all folders of a given directory, checks if a pull is needed.
+# If so, pulls and makes
+update_papers(){
+    folder=.
+    if [ $# -eq 1 ]; then
+	folder=$1
+    fi
+    for dir in $folder/*; do
+	if [ -d $dir ]; then
+	    git -C $dir remote update >> /dev/null
+	    LOCAL=$(git -C $dir rev-parse @)
+	    REMOTE=$(git -C $dir rev-parse @{u})
+	    BASE=$(git -C $dir merge-base @ @{u})
+	    if [ $LOCAL = $REMOTE ]; then
+		echo "[$dir]\tUp-to-date"
+	    elif [ $LOCAL = $BASE ]; then
+		echo "[$dir]\tPulling and making..."
+		if [ $LOCAL = $BASE ]; then
+		    git -C $dir pull > /dev/null
+		    make -C $dir > /dev/null 
+		fi
+	    elif [ $REMOTE = $BASE ]; then
+		echo "[$dir]\tNeed to push"
+	    else
+		echo "[$dir]\tDiverged"
+	    fi
+	fi
+    done
+}
