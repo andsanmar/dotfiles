@@ -1,3 +1,6 @@
 .emacs.d/history
 .emacs.d/tramp
-.emacs.d/site-lisp
+#.emacs.d/site-lisp
+.emacs.d/bookmarks
+.emacs.d/flycheck_init.elc
+.emacs.d/network-security.data

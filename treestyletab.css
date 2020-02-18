@@ -1,0 +1,164 @@
+/* Show title of unread tabs with red and italic font */
+/*
+tab-item.unread .label-content {
+  color: red !important;
+  font-style: italic !important;
+}
+*/
+
+/* Add private browsing indicator per tab */
+/*
+tab-item.private-browsing tab-label:before {
+  content: "🕶";
+}
+*/
+
+@keyframes throbber {}
+@keyframes tab-burst-animation {}
+@keyframes tab-burst-animation-light {}
+@keyframes blink {}
+
+/* As little space before the tab name as possible.
+   The fold/unfold icon is not affected. */
+tab-item:not(.pinned) {
+  padding-left: 0px !important; /* !important is required when there are enough tabs to cause a scrollbar */
+}
+
+/* Change styling of pending (unloaded) tabs
+tab-item.discarded {
+  opacity: 0.75;
+}*/
+
+tab-item.discarded .label-content {
+  color: #cccccc;
+}
+
+/* Change styling of the favicon of pending (unloaded) tabs */
+tab-item.discarded tab-favicon {
+  opacity: 0.5 !important;
+}
+
+tab-item {
+  --tab-size: 22px !important;
+  height: var(--tab-size);
+}
+
+tab-item.active {
+  background-color: #127381;
+}
+tab-item.active tab-twisty,
+tab-item.active .label-content,
+tab-item.active tab-counter {
+  color: #fff;
+}
+
+
+.newtab-button-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+#tabbar {
+  top: 20px !important;
+  bottom: 0 !important;
+}
+tab-item.pinned {
+  margin-top: 20px;
+}
+
+tab-item:not(:hover) tab-closebox {
+  display: none;
+}
+
+
+.tab:hover {
+  background: #666666;
+}
+
+.tab {
+  border-top: 0px solid var(--tab-surface-active-color);
+  background: #373739;
+  color: #ffffff;
+}
+
+:root {
+  --bg-color: #222222;
+  --bg-color-nactive: #eeeeee;
+  --shadow-color: #444444;
+  --shadow-color-inactive: #868686;
+  --tab-surface-active-color: #94A1A0;
+  --tab-surface-active-gradient: -moz-linear-gradient(top, #A0B0AF, #73867B) repeat-x;
+  --tab-surface-active-gradient-inactive: -moz-linear-gradient(top, #B4B4B4, #8A8A8A) repeat-x;
+  --tab-text: #e5e9f0;
+  --tab-text-inverted: #2e3440;
+  --tab-text-active: #e5e9f0;
+  --badge-bg-color: #d8dee9;
+  --badge-color-inactive: #b5b5b5;
+  --badge-bg-color-inactive: #d8dee9;
+  --dropmarker-border-color: #575b53;
+  --dropmarker-bg-color: #d0def5;
+  --throbber-color: white;
+  --throbber-shadow-color: var(--dropmarker-border-color);
+
+  --tab-highlighted-highlight: #eceff4;
+  --tab-highlighted-glow: #5e515c;
+  --tab-highlighted-base: var(--bg-color);
+
+  --faviconized-tab-size: 20px;
+}
+
+.tab:not(.active) {
+  --throbber-color: var(--dropmarker-border-color);
+  --throbber-shadow-color: white;
+}
+
+/* Background colour for the tree sidebar (light blue when window is
+   active, grey otherwise) */
+:root,
+#background {
+  background: var(--bg-color);
+}
+
+:root:-moz-window-inactive,
+:root:-moz-window-inactive #background {
+  background: var(--bg-color-nactive);
+}
+
+/* changed from original SidebarStyleTab */
+.after-tabs button { /* New tabs buton border */
+  background: transparent;
+  border: 0 none;
+}
+
+
+/* Make the tab counter look like the bubbles in Mail.app et.al. */
+.counter::before,
+.counter::after {
+  display: none;
+}
+
+.counter {
+  font-size: 85%;
+  background-color: var(--badge-bg-color);
+  border-radius: 10px;
+  padding: 0.2em 0.4em 0.3em 0.4em;
+  color: #2e3440;
+  font-weight: normal;
+  text-shadow: none;
+}
+
+.tab.active .counter {
+  background-color: var(--tab-text-active);
+/*  color: var(--badge-bg-color);*/
+  color: #3b4252;
+}
+
+:-moz-window-inactive .counter {
+  background-color: var(--badge-bg-color-inactive);
+}
+:-moz-window-inactive .tab.active .counter {
+  background-color: var(--tab-text-active);
+  color: var(--badge-color-inactive);
+}
