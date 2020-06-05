@@ -25,6 +25,9 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+(require 'hideshow)
+;; (global-set-key (kbd "C-c C-s") 'hs-show-block)
+;; (global-set-key (kbd "C-c C-d") 'hs-hide-block)
 
 (require 'smartparens)
 (smartparens-global-mode t)
@@ -62,6 +65,8 @@
 (global-set-key (kbd "<f2>") 'undo-tree-visualize)
 (global-set-key (kbd "<f5>") 'bs-show)
 (global-set-key (kbd "C-<tab>") 'company-dabbrev)
+
+(require 'clang-format)
 
 ;; (require 'vterm)
 (require 'vlf-setup)

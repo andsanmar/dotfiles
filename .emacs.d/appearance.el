@@ -19,16 +19,7 @@
 (add-hook 'ciao-mode-hook #'rainbow-delimiters-mode)
 (require 'rainbow-mode)
 
-;; Spaceline all-the-icons
-;; (require 'spaceline-all-the-icons)
-;; (setq spaceline-all-the-icons-separator-type 'none)
-;; (spaceline-all-the-icons-theme)
-;; (spaceline-all-the-icons--setup-neotree)
-;; (spaceline-toggle-all-the-icons-projectile-off)
-;; (spaceline-toggle-all-the-icons-buffer-path-off)
-;; (spaceline-toggle-all-the-icons-hud-off)
-;; (spaceline-toggle-all-the-icons-time-off)
-;; (spaceline-toggle-all-the-icons-buffer-position-on)
+(require 'smooth-scroll)
 
 (require 'doom-modeline)
 (doom-modeline-mode 1)
@@ -48,5 +39,14 @@
 ;; (require 'hasklig-mode)
 ;; (add-hook 'haskell-mode-hook #'hasklig-mode)
 ;; (add-hook 'coq-mode-hook #'hasklig-mode)
+
+(defun toggle-mode-line () "toggles the modeline on and off"
+  (interactive) 
+  (setq mode-line-format
+    (if (equal mode-line-format nil)
+        (default-value 'mode-line-format)) )
+  (redraw-display))
+
+(global-set-key [M-f12] 'toggle-mode-line)
 
 (require 'hide-mode-line)
