@@ -35,6 +35,10 @@
 ** Color Theme:
    Kaolin Bubblegum
 
+** Other
+   sugar-dark theme for SDDM
+   [[https://wallup.net/abstract-space-triangle-optical-illusion-penrose-triangle-stars/][Current wallpaper]]
+   [[https://wallpapercave.com/w/wp4453439][For login screen]]
 * Screenshots
 ** Normal
    #+NAME:   fig:Normal
@@ -43,3 +47,4 @@
 ** Emacs
    #+NAME:   fig:EMACS
    [[./pic/emacs.png]]
+

@@ -5,8 +5,8 @@
 (require 'markdown-mode)
 (require 'yaml-mode)
 (require 'go-mode)
-(require 'tla-mode)
 (require 'fstar-mode)
+(require 'wat-mode)
 ;; Haskell
 (require 'haskell-mode)
 (require 'haskell-process)
@@ -87,30 +87,16 @@
 ;; 	  '(lambda () (liquid-types-mode)))
 
 ;; SCALA
-(require 'use-package)
+
 ;; Enable scala-mode and sbt-mode
-(use-package scala-mode
-  :mode "\\.s\\(cala\\|bt\\)$")
+(require 'scala-mode)
+(add-to-list 'auto-mode-alist '("\\.s\\(cala\\|bt\\)$" . scala-mode))
 
-(use-package sbt-mode
-  :commands sbt-start sbt-command
-  :config
-  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
-  ;; allows using SPACE when in the minibuffer
-  (substitute-key-definition
-   'minibuffer-complete-word
-   'self-insert-command
-   minibuffer-local-completion-map))
+(require 'sbt-mode)
 
-;; Enable nice rendering of diagnostics like compile errors.
-(use-package flycheck
-  :init (global-flycheck-mode))
-
-(use-package lsp-mode
-  ;; Optional - enable lsp-mode automatically in scala files
-  :hook (scala-mode . lsp)
-  :config (setq lsp-prefer-flymake nil))
-
+;; ;; Enable nice rendering of diagnostics like compile errors.
+(require 'flycheck)
+(global-flycheck-mode)
 
 (when (version<= "27" emacs-version)
   (dolist (fun '(c-electric-paren c-electric-brace))
@@ -136,6 +122,9 @@
                   :server-id 'python-lsp))
 (add-to-list 'lsp-language-id-configuration '(python-mode . "python-mode"))
 (add-hook 'python-mode-hook #'lsp) ; or lsp-deferred
+
+(require 'k-mode)
+(require 'k3-mode)
 
 ;;; Commentary:
 ;;; Code:

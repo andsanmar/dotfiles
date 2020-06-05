@@ -16,7 +16,7 @@ set $term termite
 # XSECURELOCK_PASSWORD_PROMPT=time_hex XSECURELOCK_WAIT_TIME_MS=3
 set $lock xsecurelock
 # betterlockscreen -l
-set $wallpaper ~/multimedia/images/Wallpapers/penrose-gray.png
+set $wallpaper ~/multimedia/images/Wallpapers/penrose-gray.jpg
 
 set $rofioptions -no-lazy-grab -theme themes/appsmenu.rasi
 
@@ -313,7 +313,8 @@ bindsym $mod+ctrl+a exec thunar
 bindsym $mod+ctrl+v exec $term -e "cava"
 bindsym $mod+ctrl+h exec $term -e "htop"
 bindsym $mod+ctrl+t exec ~/.tlg
-bindsym $mod+ctrl+m exec thunderbird
+bindsym $mod+ctrl+m exec birdtray -t # Sets the try icon too
+bindsym $mod+ctrl+s exec slack
 
 # Wallpaper
 exec feh --bg-fill $wallpaper
@@ -354,5 +355,14 @@ exec xss-lock -- $lock
 exec amixer -c PCH cset 'name=Headphone Mic Boost Volume' 1 # To reduce noise on JACK
 exec picom -b
 
+# For touchpad gestures
+exec libinput-gestures-setup start
+
 for_window [class="Thunar"] resize set 1080px 720px
 for_window [class="Thunar"] move position center
+
+# To move workspace to other output:
+# i3-msg move workspace to output 5
+
+# To move whole workspace: ## TODO keybind that receives both numbers
+# i3-msg rename workspace 5 to 1
