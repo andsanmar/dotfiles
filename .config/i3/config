@@ -358,6 +358,13 @@ exec picom -b
 # For touchpad gestures
 exec libinput-gestures-setup start
 
+# For notifications
+exec dunst
+
+# Creates a new workspace (it allows to have unlimited workspaces)
+bindsym $mod+z exec ~/.config/i3/empty_workspace.sh
+bindsym $mod+Shift+z exec ~/.config/i3/empty_workspace.sh move
+
 for_window [class="Thunar"] resize set 1080px 720px
 for_window [class="Thunar"] move position center
 
