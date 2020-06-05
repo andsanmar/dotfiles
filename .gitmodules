@@ -232,3 +232,6 @@
 [submodule ".emacs.d/site-lisp/swiper"]
 	path = .emacs.d/site-lisp/swiper
 	url = https://github.com/abo-abo/swiper
+[submodule ".emacs.d/site-lisp/wat-mode"]
+	path = .emacs.d/site-lisp/wat-mode
+	url = https://github.com/devonsparks/wat-mode

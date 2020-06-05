@@ -1,0 +1,74 @@
+#TabsToolbar {
+  visibility: collapse;
+}
+
+/* Remove title section from Tree Style Tabs */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] > #sidebar-header {
+     visibility: collapse;  
+}
+
+/* Compact tab layout */
+:root { --tab-height: 20px !important; }
+.tab { height: 20px !important; }
+/* Shrink space between pinned tabs and tab bar, only when pins are present */
+#tabbar[style*="margin"] { margin-top: 20px !important; }
+
+/* Show title of unread tabs with red font */
+.tab.unread .label {
+  color: red !important;
+}
+
+/* Add private browsing indicator per tab */
+.tab.private-browsing .label:before {
+  content: " ";
+}
+
+#navigator-toolbox[fullscreenShouldAnimate] {
+    transition: none !important; 
+}
+
+:root {
+  --sidebar-min-width: 40px;
+  --sidebar-visible-width: 300px;
+  --margin-offset: -5px;
+}
+
+#sidebar-header {
+  overflow: hidden !important;
+}
+
+#tabbrowser-tabs {
+  visibility: collapse !important;
+}
+
+#sidebar-box #sidebar-header {
+    display: none !important;
+}
+
+#sidebar,
+#sidebar-header {
+  position: relative !important;
+  min-width: var(--sidebar-min-width) !important;
+  max-width: var(--sidebar-min-width) !important;
+  transition: .1s ease .15s;
+  z-index:1;
+}
+
+/* Margin when collapsed */
+#sidebar-box :-moz-any(#sidebar,#sidebar-header) {
+    margin-right: var(--margin-offset) !important;
+}
+
+#sidebar-box:hover :-moz-any(#sidebar,#sidebar-header) {
+  background-color: var(--toolbar-bgcolor) !important;
+  min-width: var(--sidebar-visible-width) !important;
+  max-width: var(--sidebar-visible-width) !important;
+  margin-right: calc((var(--sidebar-visible-width) - var(--sidebar-min-width) - var(--margin-offset)) * -1) !important; /* To keep the page occupying the same size */
+  z-index:1;
+  position: relative !important;
+  transition: .1s ease .15s;
+}
+
+#TabsToolbar > .toolbar-items,
+#TabsToolbar > .titlebar-spacer{ visibility: hidden }
+/* #nav-bar{ margin-top: -32px; margin-right: 20px; padding: 0px 150px 0px 0px !important; } */
