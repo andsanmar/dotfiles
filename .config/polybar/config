@@ -36,8 +36,9 @@ alert = #ff5458
   font-1 = MaterialIcons:size=11;1
   font-2 = FontAwesome:size=11:antialias=true;3
   font-3 = fixed:pixelsize=11:weight=bold;1:
+  font-4 = fixed:pixelsize=11:weight=bold;2
 
-  modules-left = i3 xwindow
+  modules-left = app_launcher i3 new_workspace xwindow kill_window
   modules-center = music
   modules-right = volume backlight battery date powermenu
 ; wlan
@@ -249,6 +250,33 @@ exec = echo 1
 
 label = ""
 click-left = networkmenu.py
+
+[module/new_workspace]
+type = custom/script
+exec = echo 1
+
+format-background = #272b31
+
+label = "%{T4}+%{T-}"
+click-left = ~/.config/i3/empty_workspace.sh
+
+[module/app_launcher]
+type = custom/script
+exec = echo 1
+
+format-background = #272b31
+
+label = "%{T4}⋮%{T-}"
+click-left = rofi -no-lazy-grab -theme themes/appsmenu.rasi  -show drun
+
+[module/kill_window]
+type = custom/script
+exec = echo 1
+
+format-foreground = ${colors.alert}
+
+label = "%{T4}X%{T-}"
+click-left = i3-msg kill
 
 [settings]
 screenchange-reload = true

@@ -27,6 +27,9 @@ font pango:monospace 9
 # thin borders
 hide_edge_borders both
 
+# Prevents focus by hovering
+focus_follows_mouse no
+
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -54,8 +57,11 @@ bindsym $mod+Shift+q kill
 
 # Move between workspaces
 # TODO assign too to sliding with fingers
-bindsym $mod+Shift+less workspace next
-bindsym $mod+less workspace prev
+bindsym $mod+Shift+less workspace next_on_output
+bindsym $mod+less workspace prev_on_output
+bindsym $mod+Ctrl+Shift+less workspace next
+bindsym $mod+Ctrl+less workspace prev
+
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -100,6 +106,7 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+a workspace back_and_forth
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -342,8 +349,8 @@ bindsym $mod+minus gaps inner current minus 5
 bindsym $mod+y border toggle
 
 # Touchpad enable/disable (my touchpad is xinput n 11)
-bindsym $mod+d exec xinput --disable 11
-bindsym $mod+e exec xinput --enable 11
+bindsym $mod+d exec xinput --disable 11 && libinput-gestures-setup stop
+bindsym $mod+e exec xinput --enable 11 && libinput-gestures-setup start
 
 # For natural scrolling
 # exec xinput --set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Natural Scrolling Enabled" 1
@@ -362,6 +369,7 @@ exec libinput-gestures-setup start
 exec dunst
 
 # Creates a new workspace (it allows to have unlimited workspaces)
+# TODO icon in polybar that xecutes this script
 bindsym $mod+z exec ~/.config/i3/empty_workspace.sh
 bindsym $mod+Shift+z exec ~/.config/i3/empty_workspace.sh move
 
