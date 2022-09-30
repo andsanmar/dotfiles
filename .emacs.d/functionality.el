@@ -1,48 +1,94 @@
 (savehist-mode 1)
 (setq history-length 100000)
 
-(setq-default fill-column 80)
+;; (desktop-save-mode 1) TODO set it but not save or start lsp sessions?
+(set 'desktop-auto-save-timeout 300) ;; It saves each 5 minutes
 
+(setq-default fill-column 80)
+(setq require-final-newline nil) ;; TODO for all modes
+
+;; dired - Not split frame when clicking with mouse
+;; (define-key dired-mode-map [mouse-2] 'dired-find-file)
+;; (define-key dired-mode-map [mouse-3] 'dired-do-async-shell-command)
 ;; Undo
 (require 'undo-tree)
 (defalias 'redo 'undo-tree-redo)
 (global-undo-tree-mode 1)
-(global-set-key (kbd "C-z") 'undo)
-(global-set-key (kbd "C-x C-z") 'undo)
-(global-set-key (kbd "C-S-z") 'redo)
-(global-set-key (kbd "C-M-z") 'redo)
-(require 'ox-reveal)
+
+(require 'ox-reveal) ;; org to reveal.js
 ;; Search improved
 (setq completion-ignore-case  t)
 (setq read-file-name-completion-ignore-case  t)
 (setq read-buffer-completion-ignore-case  t)
-;; smex
+
+;; (require 'counsel) ;; interactive functions
+;; (require 'ivy)
+;; (ivy-mode 1)
+;; (setq ivy-use-virtual-buffers t)
+;; (setq enable-recursive-minibuffers t)
+;; ;; (define-key ivy-minibuffer-map (kbd "TAB") 'ivy-partial) ;; To avoid execution by pressing TAB
+;; (require 'ivy-prescient)
+;; (ivy-prescient-mode 1)
+;; (prescient-persist-mode 1)
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
+;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;; (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+;; (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+;; (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+;; (global-set-key (kbd "<f1> l") 'counsel-find-library)
+;; (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+;; (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+;; (global-set-key (kbd "C-c g") 'counsel-git)
+;; (global-set-key (kbd "C-c j") 'counsel-git-grep)
+;; (global-set-key (kbd "C-c k") 'counsel-ag)
+;; (global-set-key (kbd "C-x l") 'counsel-locate)
+;; (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; ;; smex
 (require 'smex)
 (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
 ;; when Smex is auto-initialized on its first run.
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (require 'hideshow)
-;; (global-set-key (kbd "C-c C-s") 'hs-show-block)
-;; (global-set-key (kbd "C-c C-d") 'hs-hide-block)
 
 (require 'smartparens)
 (smartparens-global-mode t)
+;; (dolist (fun '(c-electric-paren c-electric-brace))
+;;   (add-to-list 'sp--special-self-insert-commands fun))
+;; Smartparens doesn handle correctly parenthesis, we use electric-pair-mode
+(add-to-list 'sp-ignore-modes-list 'c-mode)
+(add-hook 'c-mode-hook 'electric-pair-mode)
+
+(add-to-list 'sp-ignore-modes-list 'c++-mode)
+(add-hook 'c++-mode-hook 'electric-pair-mode)
+
+(add-to-list 'sp-ignore-modes-list 'sh-mode)
+(add-hook 'sh-mode-hook 'electric-pair-mode)
+
+(add-to-list 'sp-ignore-modes-list 'LaTeX-mode)
+(add-hook 'LaTeX-mode-hook 'electric-pair-mode)
+
+(add-to-list 'sp-ignore-modes-list 'python-mode)
+(add-hook 'python-mode-hook 'electric-pair-mode)
+
+
 (require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
+;; (add-hook 'after-init-hook 'global-company-mode)
 (require' flycheck)
 (global-flycheck-mode)
 ;; Magit
 (require' magit)
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 (with-eval-after-load 'info
   (info-initialize)
   (add-to-list 'Info-directory-list
                "~/.emacs.d/site-lisp/magit/Documentation/"))
+
 
 ;; Clean buffers
 (defun kill-buffers()

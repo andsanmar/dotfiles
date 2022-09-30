@@ -1,0 +1,11 @@
+alias prettygit="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) 
+%C(bold blue)<%an>%Creset' --abbrev-commit"
+alias ping="prettyping --nolegend"
+alias l="exa -lah"
+alias c="bat -p"
+alias e="emacsclient -a=\"\" -nw"
+alias ssh="TERM=xterm-256color ssh"
+alias diff="diff -u --color"
+alias date_condensed="date \"+%Y.%m.%d-%H.%M.%S\""
+alias dateUTC='TZ=UTC date'
+alias dateCET='TZ=CET date'

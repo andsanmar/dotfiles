@@ -5,6 +5,7 @@ foreground = #FFc5c8c6
 foreground-alt = #FF969896
 primary = #FFFFFF
 secondary = #91ddff
+green = #31ef7f
 alert = #ff5458
 
 
@@ -38,9 +39,9 @@ alert = #ff5458
   font-3 = fixed:pixelsize=11:weight=bold;1:
   font-4 = fixed:pixelsize=11:weight=bold;2
 
-  modules-left = app_launcher i3 new_workspace xwindow kill_window
+  modules-left = app_launcher i3 new_workspace kill_window expand_window xwindow 
   modules-center = music
-  modules-right = volume backlight battery date powermenu
+  modules-right = volume backlight battery date powermenu2
 ; wlan
 
   tray-position = right
@@ -79,21 +80,21 @@ label-maxlen = 40
   label-urgent-padding = 2
 
   ; TODO: make icons according to contents
-  ws-icon-1 = 1;
-  ws-icon-2 = 2;
-  ws-icon-3 = 3;
-  ws-icon-4 = 4;
-  ws-icon-5 = 5;
-  ws-icon-6 = 6;
-  ws-icon-7 = 7;
-  ws-icon-8 = 8;
-  ws-icon-9 = 9;
-  ws-icon-0 = 10;
+  ws-icon-1 = 1;1
+  ws-icon-2 = 2;2
+  ws-icon-3 = 3;3
+  ws-icon-4 = 4;4
+  ws-icon-5 = 5;5
+  ws-icon-6 = 6;6
+  ws-icon-7 = 7;7
+  ws-icon-8 = 8;8
+  ws-icon-9 = 9;9
+  ws-icon-0 = 10;10
 
 [module/music]
   type = custom/script
-
-  exec = echo  `playerctl metadata xesam:artist` - `playerctl metadata xesam:title`
+  ; TODO use zscroll for long titles
+  exec = echo  `playerctl metadata --format "{{title}} - {{artist}}"`
   exec-if = pgrep -x "spotify" || pgrep -x "vlc"
 
   label-maxlen = 150
@@ -157,7 +158,7 @@ label-maxlen = 40
 	;date =  %%{F${colors.foreground}%a %e %b %H:%M%%{F-}
 
 [module/volume]
-	type = internal/volume
+	type = internal/alsa
 	format-volume = <ramp-volume> <label-volume>
 	label-muted =  mute
 	label-muted-foreground = #66
@@ -166,6 +167,7 @@ label-maxlen = 40
 	ramp-volume-1 = 
 	ramp-volume-2 = 
 	ramp-volume-3 = 
+	;	click-right = pavucontrol
 
 [module/memory]
 	type = internal/memory
@@ -209,7 +211,8 @@ type = custom/text
 ;format-padding = 1
 content = ""
 content-foreground = ${colors.alert}
-click-left = powermenu.sh
+click-left = shutdown-prompt
+;click-left = powermenu.sh
 
 
 [module/powermenu2]
@@ -277,6 +280,17 @@ format-foreground = ${colors.alert}
 
 label = "%{T4}X%{T-}"
 click-left = i3-msg kill
+
+[module/expand_window]
+type = custom/script
+exec = echo 1
+
+format-foreground = ${colors.green}
+
+label = "%{T4}↕%{T-}"
+click-left = i3-msg fullscreen toggle
+click-right = i3-msg floating toggle
+
 
 [settings]
 screenchange-reload = true

@@ -3,9 +3,9 @@
 }
 
 /* Remove title section from Tree Style Tabs */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] > #sidebar-header {
-     visibility: collapse;  
-}
+/* #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] > #sidebar-header { */
+/*      visibility: collapse;   */
+/* } */
 
 /* Compact tab layout */
 :root { --tab-height: 20px !important; }
@@ -72,3 +72,12 @@
 #TabsToolbar > .toolbar-items,
 #TabsToolbar > .titlebar-spacer{ visibility: hidden }
 /* #nav-bar{ margin-top: -32px; margin-right: 20px; padding: 0px 150px 0px 0px !important; } */
+
+/* Dark scrollbar */
+
+:root{
+  scrollbar-face-color: rgb(210,210,210); /* Firefox 63 compatibility */
+  scrollbar-track-color: rgb(46,54,69); /* Firefox 63 compatibility */
+  scrollbar-color: rgba(0,0,0,.4) rgba(140,140,140,0.1);
+  scrollbar-width: thin;
+}

@@ -115,9 +115,11 @@
 (add-to-list 'lsp-language-id-configuration '(vhdl-mode . "vhdl-mode"))
 (add-hook 'vhdl-mode-hook #'lsp)
 
+;; (setq dap-auto-configure-features '(sessions locals controls tooltip))
+
 (require 'lsp-pyls)
 (lsp-register-client
- (make-lsp-client :new-connection (lsp-stdio-connection "/usr/bin/pyls")
+ (make-lsp-client :new-connection (lsp-stdio-connection "/usr/bin/pylsp")
                   :major-modes '(python-mode)
                   :server-id 'python-lsp))
 (add-to-list 'lsp-language-id-configuration '(python-mode . "python-mode"))
@@ -125,6 +127,15 @@
 
 (require 'k-mode)
 (require 'k3-mode)
+
+(require 'llvm-mode)
+
+(require 'rmsbolt) ;; Lets to see live compilation
+
+(require 'protobuf-mode)
+(add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
+
+(require 'php-mode)
 
 ;;; Commentary:
 ;;; Code:
